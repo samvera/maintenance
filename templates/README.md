@@ -13,6 +13,16 @@ Jump in: [![Slack Status](http://slack.samvera.org/badge.svg)](http://slack.samv
 
 Enter a description of the library here.
 
+## Product Owner & Maintenance
+
+{{library}} is a Core Component of the Samvera community. The documentation for
+what this means can be found
+[here](http://samvera.github.io/core_components.html#requirements-for-a-core-component).
+
+### Product Owner
+
+[githubusername](https://github.com/githubusername)
+
 # Help
 
 The Samvera community is here to help. Please see our [support guide](./SUPPORT.md).
