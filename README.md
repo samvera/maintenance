@@ -11,3 +11,10 @@ every repository. Additional elements may be added.
 [SUPPORT.md](./templates/SUPPORT.md) - Copy this and replace `{{library}}` with
 the repository name. This is linked from the README and has information on how
 to create an issue, email the list, and connect to Slack.
+
+[CONTRIBUTING.md](./templates/CONTRIBUTING.md) - Contribution guidelines for
+Samvera projects. Should be included. Minimal customization should be necessary.
+
+[CODE_OF_CONDUCT.md](./templates/CODE_OF_CONDUCT.md) - Should be included
+verbatim in every Samvera repository. If this is updated, it needs to be
+distributed to all Samvera organization repositories.
