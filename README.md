@@ -18,3 +18,8 @@ Samvera projects. Should be included. Minimal customization should be necessary.
 [CODE_OF_CONDUCT.md](./templates/CODE_OF_CONDUCT.md) - Should be included
 verbatim in every Samvera repository. If this is updated, it needs to be
 distributed to all Samvera organization repositories.
+
+[LICENSE](./templates/LICENSE) - Should be included in every Samvera
+repository. The copyright statements may change as appropriate. This template
+was taken from guidelines found on the
+[wiki](https://wiki.duraspace.org/display/samvera/Code+Copyright+Statement).
