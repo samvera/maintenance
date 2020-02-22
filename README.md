@@ -23,3 +23,7 @@ distributed to all Samvera organization repositories.
 repository. The copyright statements may change as appropriate. This template
 was taken from guidelines found on the
 [wiki](https://wiki.duraspace.org/display/samvera/Code+Copyright+Statement).
+
+## Rake Tasks
+
+There exist rake tasks that can be used to propogate some of these templates.
