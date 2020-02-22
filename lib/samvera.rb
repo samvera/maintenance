@@ -11,7 +11,7 @@ class Samvera
   #        in which we'll interact.
   #
   # @see https://github.com/octokit/octokit.rb#oauth-access-tokens
-  def initialize(logger: Logger.new, github_access_token: default_access_token, org_names: ORGANIZATION_NAMES)
+  def initialize(logger: default_logger, github_access_token: default_access_token, org_names: ORGANIZATION_NAMES)
     @logger = logger
     @client = Octokit::Client.new(access_token: github_access_token)
     @org_names = Array(org_names)
@@ -19,6 +19,11 @@ class Samvera
   attr_reader :client, :logger, :org_names
 
   private
+
+  def default_logger
+    require 'logger'
+    Logger.new(STDOUT)
+  end
 
   def default_access_token
     ENV.fetch('GITHUB_ACCESS_TOKEN')
@@ -113,7 +118,8 @@ class Samvera
     rescue Octokit::NotFound
       nil
     end
-    commit_message = "Applying #{template}\n\nThis was uploaded via automation."
+    commit_message = "Adding #{filename}\n\nThis was uploaded via automation."
+    logger.info("Creating pull request for #{filename} on #{repo.full_name}")
     target_branch_name = "refs/heads/autoupdate-#{Time.now.utc.to_s.gsub(/\D+/,'')}"
     if copy_on_master
       return unless overwrite
@@ -126,7 +132,7 @@ class Samvera
         file: File.new(template, "r"),
         branch: target_branch_name
       )
-      client.create_pull_request(repo.full_name, "refs/heads/master", target_branch_name, message)
+      client.create_pull_request(repo.full_name, "refs/heads/master", target_branch_name, commit_message)
     else
       branch = client.create_reference(repo.full_name, target_branch_name, master.object.sha)
       client.create_contents(
@@ -136,7 +142,7 @@ class Samvera
         file: File.new(template, "r"),
         branch: target_branch_name
       )
-      client.create_pull_request(repo.full_name, "refs/heads/master", target_branch_name, message)
+      client.create_pull_request(repo.full_name, "refs/heads/master", target_branch_name, commit_message)
     end
   end
 
@@ -150,16 +156,18 @@ class Samvera
   def fetch_rel_for(rel:, org:)
     # Build a list of repositories, note per Github's API, these are
     # paginated.
-    logger.info "Fetching rels[#{rel.inspect}] for '#{org.name}'"
+    logger.info "Fetching rels[#{rel.inspect}] for '#{org.login}'"
     source = org.rels[rel].get
+    rels = []
     while source
-      repos += source.data
+      rels += source.data
       if source.rels[:next]
         source = source.rels[:next].get
       else
         source = nil
       end
     end
-    logger.info "Finished fetching rels[#{rel.inspect}] for '#{org.name}'"
+    logger.info "Finished fetching rels[#{rel.inspect}] for '#{org.login}'"
+    return rels
   end
 end
