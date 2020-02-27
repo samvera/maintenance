@@ -19,10 +19,16 @@ Samvera projects. Should be included. Minimal customization should be necessary.
 verbatim in every Samvera repository. If this is updated, it needs to be
 distributed to all Samvera organization repositories.
 
+
 [LICENSE](./templates/LICENSE) - Should be included in every Samvera
 repository. The copyright statements may change as appropriate. This template
 was taken from guidelines found on the
 [wiki](https://wiki.duraspace.org/display/samvera/Code+Copyright+Statement).
+
+[MAILMAP](./templates/MAILMAP) - A master template for [git mailmap](https://www.git-scm.com/docs/git-check-mailmap).
+This template is something to push to all samvera repositories. The goal in
+applying a common mailmap is to help understand contributions as people move
+and change roles/functions/laptops.
 
 ## Rake Tasks
 
