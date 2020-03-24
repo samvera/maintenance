@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # 1. Get a personal access token from GitHub (https://github.com/settings/tokens)
 #    with the following scopes enabled:
 #    * public_repo
@@ -34,6 +36,7 @@ KNOWN_COMMITTER_EMAIL_ADDRESSES = {
   'darrenleeweber' => 'dweber.consulting@gmail.com',
   'dchandekstark' => "dchandekstark@gmail.com",
   'dheles' => 'drew@codhicitta.com',
+  'dunn' => 'dunn.alex@gmail.com',
   'elrayle' => 'elrayle@hotmail.com',
   'escowles' => 'escowles@ticklefish.org',
   'grosscol' => 'grosscol@gmail.com',
