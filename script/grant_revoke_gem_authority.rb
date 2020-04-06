@@ -24,7 +24,7 @@ ORGANIZATION_NAMES = ['samvera', 'samvera-labs', 'samvera-deprecated']
 # so start with the prior list of addresses (registered with Rubygems.org)
 KNOWN_COMMITTER_EMAIL_ADDRESSES = {
   'aaron-collier' => 'aaron.collier@stanford.edu',
-  'awead' => "amsterdamos@gmail.com",
+  'awead' => "awead@users.noreply.github.com",
   'atz' => 'ohiocore@gmail.com',
   'barmintor' => "armintor@gmail.com",
   'bess' => "bess@curationexperts.com",
@@ -37,7 +37,7 @@ KNOWN_COMMITTER_EMAIL_ADDRESSES = {
   'dchandekstark' => "dchandekstark@gmail.com",
   'dheles' => 'drew@codhicitta.com',
   'dunn' => 'dunn.alex@gmail.com',
-  'elrayle' => 'elrayle@hotmail.com',
+  'elrayle' => 'elr37@cornell.edu',
   'escowles' => 'escowles@ticklefish.org',
   'grosscol' => 'grosscol@gmail.com',
   'hackmastera' => 'anna3lc@gmail.com',
@@ -83,15 +83,17 @@ HANGERS_ON = [
   'sufia-models',
   'curation_concerns-models'
 ]
-# Email addresses that are known not to be registered at rubygems.organization
+# Email addresses that are known not to be registered at rubygems.org
 SKIP_EMAILS = [
-  'ggeisler@gmail.com',
+  'geisler@stanford.edu',
   'dlrueda@stanford.edu',
   'jgreben@stanford.edu',
   'lmcglohon@gmail.com',
   'ssklar@stanford.edu',
   'tony.zanella@gmail.com',
-  'blalbritton@gmail.com'
+  'blalbritton@gmail.com',
+  'dgcliff@northeastern.edu',
+  'jessica@ucsd.edu'
 ]
 VERBOSE = ENV.fetch('VERBOSE', false)
 
