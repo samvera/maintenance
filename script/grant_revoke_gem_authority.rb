@@ -24,7 +24,7 @@ ORGANIZATION_NAMES = ['samvera', 'samvera-labs', 'samvera-deprecated']
 # so start with the prior list of addresses (registered with Rubygems.org)
 KNOWN_COMMITTER_EMAIL_ADDRESSES = {
   'aaron-collier' => 'aaron.collier@stanford.edu',
-#  'awead' => "amsterdamos@gmail.com",
+  'awead' => "awead@users.noreply.github.com",
   'atz' => 'ohiocore@gmail.com',
   'barmintor' => "armintor@gmail.com",
   'bess' => "bess@curationexperts.com",
