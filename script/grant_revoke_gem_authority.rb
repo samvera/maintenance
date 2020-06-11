@@ -31,7 +31,6 @@ KNOWN_COMMITTER_EMAIL_ADDRESSES = {
   'cam156' => "cam156@psu.edu",
   'cbeer' => "chris@cbeer.info",
   'cjcolvar' => "cjcolvar@indiana.edu",
-  'coblej' => "jim.coble@duke.edu",
   'DanCoughlin' => "dan.coughlin@gmail.com",
   'darrenleeweber' => 'dweber.consulting@gmail.com',
   'dchandekstark' => "dchandekstark@gmail.com",
