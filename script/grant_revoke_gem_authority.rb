@@ -57,10 +57,10 @@ KNOWN_COMMITTER_EMAIL_ADDRESSES = {
   'ndushay' => "ndushay@stanford.edu",
   'tpendragon' => "tpendragon@princeton.edu",
   'carrickr' => 'carrickr@umich.edu',
-  'little9' => 'jamielittle@outlook.com',
   'no_reply' => 'johnson.tom@gmail.com',
   'revgum' => 'revgum@gmail.com',
-  'geekscruff' => 'julie.allinson@london.ac.uk'
+  'rmkadel' => 'rachelkg@gmail.com',
+  'randalldfloyd' => 'randalldfloyd@gmail.com'
 }
 # Some GitHub repositories are named differently from their gems
 KNOWN_MISMATCHED_GEM_NAMES = {
