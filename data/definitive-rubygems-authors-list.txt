@@ -1,0 +1,39 @@
+# This file has the definitive and declarative list of Samvera ruby
+# gems owners.  Each line must either be either an email address
+# of the associated Rubygems profile.
+aaron.collier@stanford.edu
+adam.wead@protonmail.com
+anna3lc@gmail.com
+armintor@gmail.com
+bess
+bmquinn
+cam156@psu.edu
+chris@cbeer.info
+cjcolvar
+dan.coughlin@gmail.com
+dchandekstark@gmail.com
+digger250@gmail.com
+drew@codhicitta.com
+dweber.consulting@gmail.com
+elrayle
+escowles@ticklefish.org
+glen.horton@gmail.com
+jenlindner@gmail.com
+jeremy.n.friesen@gmail.com
+jessie.keck@gmail.com
+johnson.tom@gmail.com
+jonathan@dnil.net
+jpstroop@gmail.com
+jrgriffiniii@gmail.com
+lawhorkl@mail.uc.edu
+leftwing@alumni.rutgers.edu
+mark@curationexperts.com
+mbklein@gmail.com
+mkorcy@gmail.com
+ndushay@stanford.edu
+ohiocore@gmail.com
+rachelkg@gmail.com
+randalldfloyd@gmail.com
+revgum@gmail.com
+thomas.scherz@uc.edu
+tpendragon@princeton.edu

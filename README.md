@@ -33,3 +33,9 @@ and change roles/functions/laptops.
 ## Rake Tasks
 
 There exist rake tasks that can be used to propogate some of these templates.
+
+## Scripts
+
+* [./script/grant_revoke_gem_authority.rb](./script/grant_revoke_gem_authority.rb)
+  is a convenience script to synchronize authorship of Samvera
+  rubygems.
