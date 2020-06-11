@@ -38,7 +38,6 @@ KNOWN_COMMITTER_EMAIL_ADDRESSES = {
   'dunn' => 'dunn.alex@gmail.com',
   'elrayle' => 'elr37@cornell.edu',
   'escowles' => 'escowles@ticklefish.org',
-  'grosscol' => 'grosscol@gmail.com',
   'hackmastera' => 'anna3lc@gmail.com',
   'hortongn' => 'glen.horton@gmail.com',
   'jeremyf' => "jeremy.n.friesen@gmail.com",
