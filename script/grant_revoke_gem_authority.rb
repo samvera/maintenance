@@ -54,7 +54,6 @@ KNOWN_COMMITTER_EMAIL_ADDRESSES = {
   'mkorcy' => "mkorcy@gmail.com",
   'ndushay' => "ndushay@stanford.edu",
   'tpendragon' => "tpendragon@princeton.edu",
-  'carrickr' => 'carrickr@umich.edu',
   'no_reply' => 'johnson.tom@gmail.com',
   'revgum' => 'revgum@gmail.com',
   'rmkadel' => 'rachelkg@gmail.com',
