@@ -23,7 +23,7 @@ namespace :templates do
   task :support do
     require 'huborg'
     client = Huborg::Client.new(org_names: ["samvera", "samvera-labs"])
-    samvera.push_template!(
+    client.push_template!(
       template: File.expand_path("./templates/SUPPORT.md"),
       filename: "SUPPORT.md",
       overwrite: true
