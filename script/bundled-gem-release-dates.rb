@@ -1,6 +1,12 @@
 require 'open3'
 require 'psych'
 
+# NOTE: I have tried to use change directory into a specific path
+# (e.g., `cd`). However, as implemented, Bundler sees my antics and
+# does not allow it to work. I am certain if I step out of CLI and use
+# a bundler tool, this can work. For now, you'll want to copy this
+# script to the directory in which you want to run it.
+
 # Read through the current directories list of bundled gems. Capture
 # each gem's specification. Sort the specifications by version release
 # date, and print one line per gem. Note, this takes some time to run.
@@ -14,9 +20,19 @@ require 'psych'
 
 specifications = []
 
-Open3.popen3("bundle list --name-only") do |i,o,e,w|
+BUNDLE_LIST_REGEXP = %r{^\* +(?<gem_name>[^ ]+) \((?<gem_version>[^\)]+)\)}
+
+# I want to see, according to bundler, the gem name and bundle
+# version.
+Open3.popen3("bundle list") do |i,o,e,w|
   o.read.chomp.split("\n").each do |line|
-    Open3.popen3("gem specification #{line}") do |stdin, stdout, stderr, wait_thr|
+    line.strip!
+    match = BUNDLE_LIST_REGEXP.match(line)
+    next unless match
+    # gem and bundler operate in different spaces. If you have
+    # instaled a later version than what is bundle, gem will pick up
+    # that later version.
+    Open3.popen3("gem specification #{match[:gem_name]} --version #{match[:gem_version]}") do |stdin, stdout, stderr, wait_thr|
       next unless wait_thr.value.success?
       yaml  = stdout.read.chomp
       specifications << Psych.load(yaml)
