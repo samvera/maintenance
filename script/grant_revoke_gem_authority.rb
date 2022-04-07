@@ -25,15 +25,12 @@ ORGANIZATION_NAMES = ['samvera', 'samvera-labs', 'samvera-deprecated']
 KNOWN_COMMITTER_EMAIL_ADDRESSES = {
   'aaron-collier' => 'aaron.collier@stanford.edu',
   'awead' => "awead@users.noreply.github.com",
-  'atz' => 'ohiocore@gmail.com',
   'barmintor' => "armintor@gmail.com",
   'bess' => "bess@curationexperts.com",
-  'cam156' => "cam156@psu.edu",
   'cbeer' => "chris@cbeer.info",
-  'cjcolvar' => "cjcolvar@indiana.edu",
+  'cjcolvar' => "chris.colvard@gmail.com",
   'coblej' => "jim.coble@duke.edu",
   'DanCoughlin' => "dan.coughlin@gmail.com",
-  'darrenleeweber' => 'dweber.consulting@gmail.com',
   'dchandekstark' => "dchandekstark@gmail.com",
   'dheles' => 'drew@codhicitta.com',
   'dunn' => 'dunn.alex@gmail.com',
@@ -56,12 +53,12 @@ KNOWN_COMMITTER_EMAIL_ADDRESSES = {
   'mkorcy' => "mkorcy@gmail.com",
   'ndushay' => "ndushay@stanford.edu",
   'tpendragon' => "tpendragon@princeton.edu",
-  'carrickr' => 'carrickr@umich.edu',
   'no_reply' => 'johnson.tom@gmail.com',
-  'revgum' => 'revgum@gmail.com',
   'rmkadel' => 'rachelkg@gmail.com',
-  'randalldfloyd' => 'randalldfloyd@gmail.com'
+  'randalldfloyd' => 'randalldfloyd@gmail.com',
+  'dlpierce' => 'dlpierce@indiana.edu'
 }
+
 # Some GitHub repositories are named differently from their gems
 KNOWN_MISMATCHED_GEM_NAMES = {
   'active_fedora' => 'active-fedora',
