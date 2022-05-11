@@ -33,6 +33,22 @@ Currently, there are eighteen Samvera Core Components maintained by the communit
 | [samvera-circleci-orb](https://github.com/samvera/samvera-circleci-orb) | [![Build Status](https://circleci.com/gh/samvera/samvera-circleci-orb.svg?style=svg)](https://circleci.com/gh/samvera/samvera-circleci-orb) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | [valkyrie](https://github.com/samvera/valkyrie) | [![Build Status](https://circleci.com/gh/samvera/valkyrie.svg?style=svg)](https://circleci.com/gh/samvera/valkyrie) |  |  | 2.7.5 | 2.6.5 |  |  | 6.0.5 | 5.2.8 |
 
+## Samvera Component Repository Labels
+
+The following common set of standard GitHub issue labels are available for each repository, and their usage is encouraged please:
+
+| Label | Description |
+| ----- | ----------- |
+| a11y | Compliance with accessibility (a11y) standards |
+| bug | Unexpected feature behavior or software error  |
+| ci | Continuous integration |
+| code-coverage | Coverage of the code base using unit, integration, or automated acceptance test suites |
+| documentation | Documentation in the form of GitHub Markdown, GitHub Wiki, or code comments (e. g. rdoc or Yard) |
+| enhancement | Feature improvement or a new feature |
+| maintenance | A task or action delegated to the Component Interest Group |
+| question | A discussion regarding any aspect of the code base (including documentation or continuous integration) |
+| security | An update addressing a known vulnerability in the code base (or in a dependency) |
+
 ## Samvera Component Templates
 
 [README.md](./templates/README.md) - The elements in this template should be in
