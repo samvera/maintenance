@@ -33,6 +33,41 @@ Currently, there are eighteen Samvera Core Components maintained by the communit
 | [samvera-circleci-orb](https://github.com/samvera/samvera-circleci-orb) | [![Build Status](https://circleci.com/gh/samvera/samvera-circleci-orb.svg?style=svg)](https://circleci.com/gh/samvera/samvera-circleci-orb) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | [valkyrie](https://github.com/samvera/valkyrie) | [![Build Status](https://circleci.com/gh/samvera/valkyrie.svg?style=svg)](https://circleci.com/gh/samvera/valkyrie) |  |  | 2.7.5 | 2.6.5 |  |  | 6.0.5 | 5.2.8 |
 
+## Promoting Samvera Projects to Core Components
+
+In order for Samvera GitHub repositories to become components, a process of promotion is in place. Prior to being considered for promotion, the repository must first be migrated to [Samvera Labs](https://github.com/samvera-labs). Alternatively, one may also create an entirely new project within Samvera Labs (there are no restrictions for creating GitHub repositories within this organization).
+
+The established requirements for promoting a project to a core component are the following:
+
+### Code Quality Requirements
+- Good software test coverage measured using a tool such as [simplecov for Ruby](https://github.com/simplecov-ruby/simplecov) or [Jest for JavaScript](https://jestjs.io/docs/configuration#collectcoverage-boolean) (e.g. 100% or 75% of what’s important)
+- Employs a source code linting tool such as [bixby](https://github.com/samvera/bixby) or [prettier](https://github.com/prettier/prettier) in order to enforce style guidelines within the source code base
+- Uses continuous integration to automate the execution of test suites (Preferably CircleCI, unless there is a compelling reason to do something else)
+- Demonstrates compatibility with the latest releases of Ruby (and, where appropriate, Rails and JavaScript)
+- Code must features releases using RubyGems or the NPM, and offer a release version >= 1.0.0
+- Code releases must follow the [Semantic Versioning specification](https://semver.org/) standards
+
+### Documentation Requirements
+
+Currently, the documentation files for each core component are derived from templates tracked within this repository:
+
+- [README.md](./templates/README.md) - The elements in this template should be in every repository. Additional elements may be added.
+- [SUPPORT.md](./templates/SUPPORT.md) - Copy this and replace `{{library}}` with the repository name. This is linked from the README and has information on how to create an issue, email the list, and connect to Slack.
+- [CONTRIBUTING.md](./templates/CONTRIBUTING.md) - Contribution guidelines for Samvera projects. Should be included. Minimal customization should be necessary.
+- [CODE_OF_CONDUCT.md](./templates/CODE_OF_CONDUCT.md) - Should be included verbatim in every Samvera repository. If this is updated, it needs to be distributed to all Samvera organization repositories.
+- [LICENSE](./templates/LICENSE) - Should be included in every Samvera repository. The copyright statements may change as appropriate. This template was taken from guidelines found on the [wiki](https://wiki.duraspace.org/display/samvera/Code+Copyright+Statement).
+- [MAILMAP](./templates/MAILMAP) - A master template for [git mailmap](https://www.git-scm.com/docs/git-check-mailmap). This template is something to push to all samvera repositories. The goal in applying a common mailmap is to help understand contributions as people move and change roles/functions/laptops.
+
+### Community Use Requirements
+
+- Community use by three or more Samvera institutions or organizations
+- In active use for six months
+- Offers an ongoing maintenance roadmap
+
+### Proposing a Project to the Community for Promotion
+
+As needed or requested, code repositories are reviewed for promotion. To start this process, email [the Samvera Tech Google Group](https://groups.google.com/g/samvera-tech) with a request. Provide documentation that all of the above requirements have been met. Ask for a spot on the next developer’s call to discuss the issue. Once the promotion has been decided, another email should go out to the list with an announcement.
+
 ## Samvera Component Repository Labels
 
 The following common set of standard GitHub issue labels are available for each repository, and their usage is encouraged please:
@@ -49,33 +84,7 @@ The following common set of standard GitHub issue labels are available for each 
 | question | A discussion regarding any aspect of the code base (including documentation or continuous integration) |
 | security | An update addressing a known vulnerability in the code base (or in a dependency) |
 
-## Samvera Component Templates
-
-[README.md](./templates/README.md) - The elements in this template should be in
-every repository. Additional elements may be added.
-
-[SUPPORT.md](./templates/SUPPORT.md) - Copy this and replace `{{library}}` with
-the repository name. This is linked from the README and has information on how
-to create an issue, email the list, and connect to Slack.
-
-[CONTRIBUTING.md](./templates/CONTRIBUTING.md) - Contribution guidelines for
-Samvera projects. Should be included. Minimal customization should be necessary.
-
-[CODE_OF_CONDUCT.md](./templates/CODE_OF_CONDUCT.md) - Should be included
-verbatim in every Samvera repository. If this is updated, it needs to be
-distributed to all Samvera organization repositories.
-
-[LICENSE](./templates/LICENSE) - Should be included in every Samvera
-repository. The copyright statements may change as appropriate. This template
-was taken from guidelines found on the
-[wiki](https://wiki.duraspace.org/display/samvera/Code+Copyright+Statement).
-
-[MAILMAP](./templates/MAILMAP) - A master template for [git mailmap](https://www.git-scm.com/docs/git-check-mailmap).
-This template is something to push to all samvera repositories. The goal in
-applying a common mailmap is to help understand contributions as people move
-and change roles/functions/laptops.
-
-## Ruby Scripts
+## Core Component Utilities in Ruby
 
 There exist Ruby scripts in this repository that can be used to propagate some of these templates:
 
