@@ -12,24 +12,26 @@ _Please reference [A Guide for the Samvera Community](https://samvera.github.io/
 
 Currently, there are eighteen Samvera Core Components maintained by the community:
 
-1. [active_fedora](https://github.com/samvera/active_fedora)
-1. [bixby](https://github.com/samvera/bixby)
-1. [browse-everything](https://github.com/samvera/browse-everything)
-1. [hydra-derivatives](https://github.com/samvera/hydra-derivatives)
-1. [hydra-editor](https://github.com/samvera/hydra-editor)
-1. [hydra-file_characterization](https://github.com/samvera/hydra-file_characterization)
-1. [hydra-head](https://github.com/samvera/hydra-head)
-1. [hydra-pcdm](https://github.com/samvera/hydra-pcdm)
-1. [hydra-role-management](https://github.com/samvera/hydra-role-management)
-1. [hydra-works](https://github.com/samvera/hydra-works)
-1. [iiif_manifest](https://github.com/samvera/iiif_manifest)
-1. [ldp](https://github.com/samvera/ldp)
-1. [noid-rails](https://github.com/samvera/noid-rails)
-1. [questioning_authority](https://github.com/samvera/questioning_authority)
-1. [rubydora](https://github.com/samvera/rubydora)
-1. [samvera.github.io](https://github.com/samvera/samvera.github.io)
-1. [samvera-circleci-orb](https://github.com/samvera/samvera-circleci-orb)
-1. [valkyrie](https://github.com/samvera/valkyrie)
+| Component | CircleCI Status | Ruby 3.1 Support | Ruby 3.0 Support | Ruby 2.7 Support | Ruby 2.6 Support | Rails 7.0 Support | Rails 6.1 Support | Rails 6.0 Support | Rails 5.2 Support |
+| --------- | ---------------- | ---------------- | ---------------- | ---------------- | ----------------- | ---------------- | ---------------- | ---------------- | --------------- |
+| [active_fedora](https://github.com/samvera/active_fedora) | [![Build Status](https://circleci.com/gh/samvera/active_fedora.svg?style=svg)](https://circleci.com/gh/samvera/active_fedora) |  |  | 2.7.0 | 2.6.5 |  |  | 6.0.2 | 5.2.4 |
+| [bixby](https://github.com/samvera/bixby) | [![Build Status](https://circleci.com/gh/samvera/bixby.svg?style=svg)](https://circleci.com/gh/samvera/bixby) | 3.1.1 | 3.0.3 | 2.7.5 | 2.6.9 | N/A | N/A | N/A | N/A |
+| [browse-everything](https://github.com/samvera/browse-everything) | [![Build Status](https://circleci.com/gh/samvera/browse-everything.svg?style=svg)](https://circleci.com/gh/samvera/browse-everything) |  |  | 2.7.5 | 2.6.9 |  |  | 6.0.4.7 | 5.2.4 |
+| [hydra-derivatives](https://github.com/samvera/hydra-derivatives) | [![Build Status](https://circleci.com/gh/samvera/hydra-derivatives.svg?style=svg)](https://circleci.com/gh/samvera/hydra-derivatives) |  |  | 2.7.5 | 2.6.9 | N/A | N/A | N/A | N/A |
+| [hydra-editor](https://github.com/samvera/hydra-editor) | [![Build Status](https://circleci.com/gh/samvera/hydra-editor.svg?style=svg)](https://circleci.com/gh/samvera/hydra-editor) |  |  | 2.7.5 | 2.6.9 |  |  | 6.0.3.4 | 5.2.3 |
+| [hydra-file_characterization](https://github.com/samvera/hydra-file_characterization) | [![Build Status](https://circleci.com/gh/samvera/hydra-file_characterization.svg?style=svg)](https://circleci.com/gh/samvera/hydra-file_characterization) |  | 3.0.3 | 2.7.5 | 2.6.9 | 7.0.2.3 | 6.1.5 | 6.0.4.7 | 5.2.7 |
+| [hydra-head](https://github.com/samvera/hydra-head) | [![Build Status](https://circleci.com/gh/samvera/hydra-head.svg?style=svg)](https://circleci.com/gh/samvera/hydra-head) |  |  | 2.7.3 | 2.6.7 |  |  | 6.0.3.7 | 5.2.6 |
+| [hydra-pcdm](https://github.com/samvera/hydra-pcdm) | [![Build Status](https://circleci.com/gh/samvera/hydra-pcdm.svg?style=svg)](https://circleci.com/gh/samvera/hydra-pcdm) |  |  | 2.7.5 | 2.6.9 |  |  | 6.0.2 | 5.2.4 |
+| [hydra-role-management](https://github.com/samvera/hydra-role-management) | [![Build Status](https://circleci.com/gh/samvera/hydra-role-management.svg?style=svg)](https://circleci.com/gh/samvera/hydra-role-management) |  |  | 2.7.5 | 2.6.9 |  |  | 6.0.2 | 5.2.4 |
+| [hydra-works](https://github.com/samvera/hydra-works) | [![Build Status](https://circleci.com/gh/samvera/hydra-works.svg?style=svg)](https://circleci.com/gh/samvera/hydra-works)|  |  | 2.7.5 | 2.6.9 |  |  | 6.0.3.1 | 5.2.4.3 | [![Build Status](https://circleci.com/gh/samvera/hydra-works.svg?style=svg)](https://circleci.com/gh/samvera/hydra-works) |
+| [iiif_manifest](https://github.com/samvera/iiif_manifest) | [![Build Status](https://circleci.com/gh/samvera/iiif_manifest.svg?style=svg)](https://circleci.com/gh/samvera/iiif_manifest) |  | 3.0.3 | 2.7.5 | 2.6.9 | N/A | N/A | N/A | N/A |
+| [ldp](https://github.com/samvera/ldp) | [![Build Status](https://circleci.com/gh/samvera/ldp.svg?style=svg)](https://circleci.com/gh/samvera/ldp) |  |  | 2.7.5 | 2.6.9 |  |  | 6.0.4.4 | 5.2.0 |
+| [noid-rails](https://github.com/samvera/noid-rails) | [![Build Status](https://circleci.com/gh/samvera/noid-rails.svg?style=svg)](https://circleci.com/gh/samvera/noid-rails) |  |  | 2.7.5 | 2.6.9 |  | 6.1.3.2 | 6.0.3.2 | 5.2.4.3 |
+| [questioning_authority](https://github.com/samvera/questioning_authority) | [![Build Status](https://circleci.com/gh/samvera/questioning_authority.svg?style=svg)](https://circleci.com/gh/samvera/questioning_authority) |  |  | 2.7.5 | 2.6.9 |  | 6.1.1 | 6.0.2 | 5.2.4 |
+| [rubydora](https://github.com/samvera/rubydora) | [![Build Status](https://circleci.com/gh/samvera/rubydora.svg?style=svg)](https://circleci.com/gh/samvera/rubydora) |  |  | 2.7.5 | 2.6.9 |  |  | 6.0.2 | 5.2.4 |
+| [samvera.github.io](https://github.com/samvera/samvera.github.io) | [![Build Status](https://circleci.com/gh/samvera/samvera.github.io.svg?style=svg)](https://circleci.com/gh/samvera/samvera.github.io) | 3.1.1 | 3.0.3 | 2.7.5 | 2.6.9 | N/A | N/A | N/A | N/A |
+| [samvera-circleci-orb](https://github.com/samvera/samvera-circleci-orb) | [![Build Status](https://circleci.com/gh/samvera/samvera-circleci-orb.svg?style=svg)](https://circleci.com/gh/samvera/samvera-circleci-orb) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| [valkyrie](https://github.com/samvera/valkyrie) | [![Build Status](https://circleci.com/gh/samvera/valkyrie.svg?style=svg)](https://circleci.com/gh/samvera/valkyrie) |  |  | 2.7.5 | 2.6.5 |  |  | 6.0.5 | 5.2.8 |
 
 ## Samvera Component Templates
 
