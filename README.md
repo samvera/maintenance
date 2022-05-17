@@ -68,6 +68,41 @@ Currently, the documentation files for each core component are derived from temp
 
 As needed or requested, code repositories are reviewed for promotion. To start this process, email [the Samvera Tech Google Group](https://groups.google.com/g/samvera-tech) with a request. Provide documentation that all of the above requirements have been met. Ask for a spot on the next developer’s call to discuss the issue. Once the promotion has been decided, another email should go out to the list with an announcement.
 
+## Releases and GitHub Milestones
+
+Releases for core components must please follow the [Semantic Versioning specification](https://semver.org/). Releases must be addressed using both [GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) and, where appropriate, [RubyGems](https://guides.rubygems.org/publishing/). Further it is recommended that a `CHANGELOG` please also be updated to document the most recent changes (please see URL and URL for an outline of best practices).
+
+Releasing involves creating a git tag tracking the last git commit to be included within the new release. As each release is published, it may be helpful to track GitHub issues tied using [Milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) specifying the next potential release in each series of releases. For example, say that there exists a component with three major releases:
+
+- 3.0.0
+- 2.2.1
+- 1.1.2
+
+Following this approach, at minimum, three milestones would then exist for the next successive `PATCH` release in each series:
+
+- 3.0.1
+- 2.2.2
+- 1.1.3
+
+There is no required number of series of releases which must actively remain supported beyond the current series. Further, one may also wish to take a more proactive approach, and manage future `MINOR` releases as well:
+
+- 3.1.0
+- 3.0.2
+- 2.3.0
+- 2.2.2
+- 1.2.0
+- 1.1.3
+
+### Branches
+
+Often times when maintaining multiple series of releases, it is quite helpful to have a set of matching `git branches` for these releases. Returning to this example case, one could have the following branches:
+
+- `3.x-stable`
+- `2.x-stable`
+- `1.x-stable`
+
+Further branches should not be necessary, as `MINOR` releases should always be backwards compatible (i. e. those using release 2.2.1 should be able to upgrade to 2.3.0 without encountering errors).
+
 ## Samvera Component Repository Labels
 
 The following common set of standard GitHub issue labels are available for each repository, and their usage is encouraged please:
