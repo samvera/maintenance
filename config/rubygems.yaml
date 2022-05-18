@@ -1,0 +1,16 @@
+---
+github:
+  owners:
+    # [GitHub Account]: [RubyGems Account]
+    aaron-collier: acollier
+    billdueber: BillDueber
+    carolyncole: cam156
+    hackartisan: HackmasterA
+    jrgriffiniii: jrgriffiniii
+    julesies: geekycoder
+    no-reply: no_reply
+owners:
+  invalid:
+    - kelynch
+    - mlooney
+    - orangewolf

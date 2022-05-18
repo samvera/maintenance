@@ -1,0 +1,35 @@
+AllCops:
+  Exclude:
+    - 'script/**/*'
+
+Layout/LineLength:
+  Exclude:
+    - 'lib/samvera/git_hub.rb'
+    - 'lib/samvera/org.rb'
+    - 'spec/system/cli_spec.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/samvera/gem_query_service.rb'
+    - 'lib/samvera/org.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - 'lib/samvera/gem_query_service.rb'
+    - 'spec/system/cli_spec.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'lib/samvera/gem_query_service.rb'
+    - 'lib/samvera/org.rb'
+
+Style/Documentation:
+  Exclude:
+    - 'lib/samvera.rb'
+    - 'lib/samvera/gem_query_service.rb'
+    - 'lib/samvera/git_hub.rb'
+    - 'lib/samvera/org.rb'
+    - 'lib/samvera/repository_query_service.rb'
+    - 'lib/samvera/ruby_gems.rb'
+
