@@ -133,9 +133,12 @@ describe Samvera::Org, type: :system do
     ].to_yaml
   end
 
-  before do
+  before(:all) do
+    ENV["GEM_HOST_API_KEY"] = 'secret'
     ENV['GITHUB_SAMVERA_TOKEN'] = 'secret'
+  end
 
+  before do
     allow(::Github).to receive(:new).and_return(github_client)
     allow(github_client).to receive(:orgs).and_return(github_orgs)
     allow(github_client).to receive(:repos).with(user: 'samvera').and_return(github_samvera_repos)
@@ -205,7 +208,8 @@ describe Samvera::Org, type: :system do
     cli
   end
 
-  after do
+  after(:all) do
+    ENV["GEM_HOST_API_KEY"] = nil
     ENV['GITHUB_SAMVERA_TOKEN'] = nil
   end
 

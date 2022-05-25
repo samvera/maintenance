@@ -6,7 +6,7 @@ module Samvera
   class GitHub
     class << self
       def authorization_token
-        @authorization_token = ENV['GITHUB_SAMVERA_TOKEN'] || raise(
+        @authorization_token = ENV.fetch('GITHUB_SAMVERA_TOKEN', nil) || raise(
           ArgumentError,
           'GitHub authorization token was not found in the GITHUB_SAMVERA_TOKEN environment variable'
         )
@@ -49,7 +49,7 @@ module Samvera
       end
 
       def admin_team
-        @admin_team = samvera_team.select { |team| team.name == 'admins' }.first
+        @admin_team = samvera_team.find { |team| team.name == 'admins' }
       end
 
       def admin_response
@@ -70,7 +70,7 @@ module Samvera
       end
 
       def contrib_team
-        @contrib_team = samvera_team.select { |team| team.name == 'contributors' }.first
+        @contrib_team = samvera_team.find { |team| team.name == 'contributors' }
       end
 
       def contrib_response

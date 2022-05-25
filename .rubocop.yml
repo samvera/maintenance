@@ -1,6 +1,11 @@
+inherit_gem:
+  bixby: bixby_default.yml
+
 AllCops:
   Exclude:
+    - 'Rakefile'
     - 'script/**/*'
+    - 'vendor/**/*'
 
 Layout/LineLength:
   Exclude:

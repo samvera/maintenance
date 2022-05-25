@@ -236,6 +236,7 @@ module Samvera
       add_command = RemoveOwnersCommand.new
       add_command.options[:args] = [@gem_name]
       owner_logins = owners.map(&:login)
+      add_command.options[:add] = []
       add_command.options[:remove] = owner_logins
 
       add_command.execute

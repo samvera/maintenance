@@ -11,6 +11,7 @@ group :development do
   gem 'bixby'
   gem 'pry-byebug'
   gem 'rspec'
+  gem 'rspec_junit_formatter'
   gem 'simplecov'
   gem 'webmock'
   gem 'yard'

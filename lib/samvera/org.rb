@@ -28,9 +28,7 @@ module Samvera
     desc('add_owners', 'Ensure that all members of the administrator GitHub Team are Gem Owners for RubyGems entries')
     def add_owners
       GitHub.repositories.each do |repo|
-        if !RubyGems.gem_exists?(name: repo.name)
-          say("Could not find the Gem for #{repo.name}...", :red)
-        else
+        if RubyGems.gem_exists?(name: repo.name)
           current_owners = RubyGems.show_gem_owners(name: repo.name)
           owners = GitHub.samvera_admins.reject { |o| current_owners.map(&:login).include?(o.login) }
 
@@ -40,6 +38,8 @@ module Samvera
           rescue StandardError => e
             raise(Thor::Error, e.message)
           end
+        else
+          say("Could not find the Gem for #{repo.name}...", :red)
         end
       end
     end
@@ -48,9 +48,7 @@ module Samvera
          'Ensure that all Gem Owners for RubyGems entries which are *not* members of the administrator GitHub Team are removed')
     def remove_owners
       GitHub.repositories.each do |repo|
-        if !RubyGems.gem_exists?(name: repo.name)
-          say("Could not find the Gem for #{repo.name}...", :red)
-        else
+        if RubyGems.gem_exists?(name: repo.name)
           current_owners = RubyGems.show_gem_owners(name: repo.name)
           owners = GitHub.samvera_admins.reject { |o| current_owners.map(&:login).include?(o.login) }
 
@@ -60,6 +58,8 @@ module Samvera
           rescue StandardError => e
             raise(Thor::Error, e.message)
           end
+        else
+          say("Could not find the Gem for #{repo.name}...", :red)
         end
       end
     end
