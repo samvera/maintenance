@@ -15,7 +15,6 @@ Currently, projects under active maintenance (including the Core Components) are
 | [Hyrax](https://github.com/samvera/hyrax) | Hyrax is a Ruby on Rails Engine built by the Samvera community. Hyrax provides a foundation for creating many different digital repository applications. |
 | [node-iiif](https://github.com/samvera/node-iiif) | This module provides a full-featured IIIF Image API 2.1 image processor. It covers only the image processing pipeline itself, leaving input and output to the caller. |
 | [serverless-iiif](https://github.com/samvera/serverless-iiif) | IIIF Image API 2.1 server in an AWS Serverless Application |
-| [cla-bot](https://github.com/samvera/cla-bot) | This repository is the configuration for CLAbot for the Samvera Github organizations (samvera and samvera-labs) |
 
 ## Samvera Labs
 
