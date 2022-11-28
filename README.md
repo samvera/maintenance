@@ -32,6 +32,8 @@ Currently, there are eighteen Samvera Core Components maintained by the communit
 | [samvera.github.io](https://github.com/samvera/samvera.github.io) | [![Build Status](https://circleci.com/gh/samvera/samvera.github.io.svg?style=svg)](https://circleci.com/gh/samvera/samvera.github.io) | 3.1.1 | 3.0.3 | 2.7.5 | 2.6.9 | N/A | N/A | N/A | N/A |
 | [samvera-circleci-orb](https://github.com/samvera/samvera-circleci-orb) | [![Build Status](https://circleci.com/gh/samvera/samvera-circleci-orb.svg?style=svg)](https://circleci.com/gh/samvera/samvera-circleci-orb) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | [valkyrie](https://github.com/samvera/valkyrie) | [![Build Status](https://circleci.com/gh/samvera/valkyrie.svg?style=svg)](https://circleci.com/gh/samvera/valkyrie) |  |  | 2.7.5 | 2.6.5 |  |  | 6.0.5 | 5.2.8 |
+| [node-iiif](https://github.com/samvera/node-iiif) | [![Build Status](https://circleci.com/gh/samvera/node-iiif.svg?style=svg)](https://circleci.com/gh/samvera/node-iiif) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| [serverless-iiif](https://github.com/samvera/serverless-iiif) | [![Build Status](https://circleci.com/gh/samvera/serverless-iiif.svg?style=svg)](https://circleci.com/gh/samvera/serverless-iiif) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 
 ## Samvera Component Templates
 
