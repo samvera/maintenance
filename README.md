@@ -35,6 +35,12 @@ Currently, there are eighteen Samvera Core Components maintained by the communit
 | [node-iiif](https://github.com/samvera/node-iiif) | [![Build Status](https://circleci.com/gh/samvera/node-iiif.svg?style=svg)](https://circleci.com/gh/samvera/node-iiif) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | [serverless-iiif](https://github.com/samvera/serverless-iiif) | [![Build Status](https://circleci.com/gh/samvera/serverless-iiif.svg?style=svg)](https://circleci.com/gh/samvera/serverless-iiif) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 
+## Maintenance Documentation
+
+- [ORGS](./ORGS.md) - Reference guide for the structure of GitHub Organizations (`samvera`, `samvera-labs`, and `samvera-deprecated`)
+- [TEAMS](./TEAMS.md) - Reference guide for the structure of GitHub Teams within the `samvera`, `samvera-labs`, and `samvera-deprecated` Organizations
+- [RELEASES](./ruby/RELEASES.md) - Reference guide for the releasing Ruby Gem components maintained by the Samvera Community
+
 ## Samvera Component Templates
 
 [README.md](./templates/README.md) - The elements in this template should be in
@@ -63,14 +69,14 @@ and change roles/functions/laptops.
 
 ## Ruby Scripts
 
-There exist Ruby scripts in this repository that can be used to propagate some of these templates:
+There exist Ruby scripts in this repository that can be used to propagate some of these templates. These are located within `ruby/scripts/`:
 
 ### Querying for Gem Metadata
 
 This queries for and prints to the `STDOUT` Gem metadata for each Samvera repository:
 
 ```bash
-$ bundle exec ruby bundled-gem-release-dates.rb
+$ bundle exec ruby ./ruby/script/bundled-gem-release-dates.rb
 ```
 
 The output is formatted using the following structure:
@@ -93,13 +99,13 @@ The output is formatted using the following structure:
 This ensures that a list maintained within this repository have the proper permissions for all Samvera repositories:
 
 ```bash
-$ bundle exec ruby grant_revoke_gem_authority.rb
+$ bundle exec ruby ./ruby/script/grant_revoke_gem_authority.rb
 ```
 
 One may also explicitly request that all existing ownership permissions be revoked before adding permissions for each Gem:
 
 ```bash
-$ WITH_REVOKE=true bundle exec ruby ./script/grant_revoke_gem_authority.rb
+$ WITH_REVOKE=true bundle exec ruby ./ruby/script/grant_revoke_gem_authority.rb
 ```
 
 ## Contributing
