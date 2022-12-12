@@ -67,6 +67,10 @@ This template is something to push to all samvera repositories. The goal in
 applying a common mailmap is to help understand contributions as people move
 and change roles/functions/laptops.
 
+## Command-Line Interface (CLI) Utility
+
+There exists a command-line interface utility which may be used to query for GitHub Team data and in order to perform RubyGems administrative tasks. [Please reference the CLI documentation for an overview of the usage for this](./CLI.md).
+
 ## Ruby Scripts
 
 There exist Ruby scripts in this repository that can be used to propagate some of these templates. These are located within `ruby/scripts/`:

@@ -1,0 +1,69 @@
+---
+version: 2.1
+orbs:
+  samvera: samvera/circleci-orb@1.0
+jobs:
+  bundle_lint_test:
+    parameters:
+      ruby_version:
+        type: string
+      bundler_version:
+        type: string
+        default: 2.3.14
+    executor:
+      name: 'samvera/ruby'
+      ruby_version: << parameters.ruby_version >>
+    environment:
+      NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+    steps:
+      - samvera/cached_checkout
+      - run:
+         name: Check for a branch named 'master'
+         command: |
+           git fetch --all --quiet --prune --prune-tags
+           if [[ -n "$(git branch --all --list master */master)" ]]; then
+             echo "A branch named 'master' was found. Please remove it."
+             echo "$(git branch --all --list master */master)"
+           fi
+           [[ -z "$(git branch --all --list master */master)" ]]
+      - samvera/bundle:
+          ruby_version: << parameters.ruby_version >>
+          bundler_version: << parameters.bundler_version >>
+      - samvera/rubocop
+      - run:
+          name: 'Lint the source code files using RuboCop'
+          command: 'bundle exec rubocop --config=./.rubocop.yml --parallel'
+      - samvera/parallel_rspec
+
+workflows:
+  version: 2
+  ci:
+    jobs:
+      - bundle_lint_test:
+          name: bundle_ruby3-1
+          ruby_version: 3.1.2
+      - bundle_lint_test:
+          name: bundle_ruby3-0
+          ruby_version: 3.0.4
+      - bundle_lint_test:
+          name: bundle_ruby2-7
+          ruby_version: 2.7.6
+
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - bundle_lint_test:
+          name: bundle_ruby3-1
+          ruby_version: 3.1.2
+      - bundle_lint_test:
+          name: bundle_ruby3-0
+          ruby_version: 3.0.4
+      - bundle_lint_test:
+          name: bundle_ruby2-7
+          ruby_version: 2.7.6
