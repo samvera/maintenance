@@ -10,10 +10,12 @@ Samvera Core Components are defined as the following:
 
 _Please reference [A Guide for the Samvera Community](https://samvera.github.io/core_components.html) for further information._
 
-Currently, there are eighteen Samvera Core Components maintained by the community:
+Currently, there are twenty Samvera Core Components maintained by the community:
+
+### Ruby Samvera Components
 
 | Component | CircleCI Status | Ruby 3.1 Support | Ruby 3.0 Support | Ruby 2.7 Support | Ruby 2.6 Support | Rails 7.0 Support | Rails 6.1 Support | Rails 6.0 Support | Rails 5.2 Support |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [active_fedora](https://github.com/samvera/active_fedora)                             | [![Build Status](https://circleci.com/gh/samvera/active_fedora.svg?style=svg)](https://circleci.com/gh/samvera/active_fedora)                             |                  |                  | 2.7.0            | 2.6.5            |                   |                   | 6.0.2             | 5.2.4             |
 | [bixby](https://github.com/samvera/bixby)                                             | [![Build Status](https://circleci.com/gh/samvera/bixby.svg?style=svg)](https://circleci.com/gh/samvera/bixby)                                             | 3.1.1            | 3.0.3            | 2.7.5            | 2.6.9            | N/A               | N/A               | N/A               | N/A               |
 | [browse-everything](https://github.com/samvera/browse-everything)                     | [![Build Status](https://circleci.com/gh/samvera/browse-everything.svg?style=svg)](https://circleci.com/gh/samvera/browse-everything)                     |                  |                  | 2.7.5            | 2.6.9            |                   |                   | 6.0.4.7           | 5.2.4             |
@@ -32,8 +34,13 @@ Currently, there are eighteen Samvera Core Components maintained by the communit
 | [samvera.github.io](https://github.com/samvera/samvera.github.io)                     | [![Build Status](https://circleci.com/gh/samvera/samvera.github.io.svg?style=svg)](https://circleci.com/gh/samvera/samvera.github.io)                     | 3.1.1            | 3.0.3            | 2.7.5            | 2.6.9            | N/A               | N/A               | N/A               | N/A               |
 | [samvera-circleci-orb](https://github.com/samvera/samvera-circleci-orb)               | [![Build Status](https://circleci.com/gh/samvera/samvera-circleci-orb.svg?style=svg)](https://circleci.com/gh/samvera/samvera-circleci-orb)               | N/A              | N/A              | N/A              | N/A              | N/A               | N/A               | N/A               | N/A               |
 | [valkyrie](https://github.com/samvera/valkyrie)                                       | [![Build Status](https://circleci.com/gh/samvera/valkyrie.svg?style=svg)](https://circleci.com/gh/samvera/valkyrie)                                       |                  |                  | 2.7.5            | 2.6.5            |                   |                   | 6.0.5             | 5.2.8             |
-| [node-iiif](https://github.com/samvera/node-iiif)                                     | [![Build Status](https://circleci.com/gh/samvera/node-iiif.svg?style=svg)](https://circleci.com/gh/samvera/node-iiif)                                     | N/A              | N/A              | N/A              | N/A              | N/A               | N/A               | N/A               | N/A               |
-| [serverless-iiif](https://github.com/samvera/serverless-iiif)                         | [![Build Status](https://circleci.com/gh/samvera/serverless-iiif.svg?style=svg)](https://circleci.com/gh/samvera/serverless-iiif)                         | N/A              | N/A              | N/A              | N/A              | N/A               | N/A               | N/A               | N/A               |
+
+### JavaScript Samvera Components
+
+| Component                                                     | CircleCI Status                                                                                                                   | Node.js 18.x Support | Node.js 16.x Support | Node.js 14.x Support |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------- | -------------------- | -------------------- |
+| [node-iiif](https://github.com/samvera/node-iiif)             | [![Build Status](https://circleci.com/gh/samvera/node-iiif.svg?style=svg)](https://circleci.com/gh/samvera/node-iiif)             | N/A                  | N/A                  | N/A                  | N/A | N/A | N/A | N/A | N/A |
+| [serverless-iiif](https://github.com/samvera/serverless-iiif) | [![Build Status](https://circleci.com/gh/samvera/serverless-iiif.svg?style=svg)](https://circleci.com/gh/samvera/serverless-iiif) | N/A                  | N/A                  | N/A                  | N/A | N/A | N/A | N/A | N/A |
 
 ## Maintenance Documentation
 

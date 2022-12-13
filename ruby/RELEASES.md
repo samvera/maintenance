@@ -1,14 +1,15 @@
 # Release Management for Ruby Core Components
 
 ## Semantic Versioning
+
 Samvera Core Components follow the standards established by [the Semantic Versioning guidelines](https://semver.org/). As such, there are three possible types of releases supported:
 
 - Patch (For example, 1.0.1 following 1.0.0)
-    - These releases do not introduce any changes which require an upgrade of any kind. These releases also do not include improvements or new features, but instead include security updates or software bug repairs.
+  - These releases do not introduce any changes which require an upgrade of any kind. These releases also do not include improvements or new features, but instead include security updates or software bug repairs.
 - Minor (Example: 1.1.0 following 1.0.0)
-    - These releases do not introduce any changes which require an upgrade of any kind, and should never introduce any errors for applications or Gems which depend upon previous minor releases in latest major series (e. g. upgrading to 1.0.2 should never break Ruby applications and Gems which depend upon 1.0.1 or 1.0.0, however compatibility for releases prior to 1.0.0 is not guaranteed).
+  - These releases do not introduce any changes which require an upgrade of any kind, and should never introduce any errors for applications or Gems which depend upon previous minor releases in latest major series (e. g. upgrading to 1.0.2 should never break Ruby applications and Gems which depend upon 1.0.1 or 1.0.0, however compatibility for releases prior to 1.0.0 is not guaranteed).
 - Major (Example: 2.0.0 following 1.0.0)
-    - These releases introduce changes which require an upgrade for Ruby applications and Gems which depend upon this Gem. As such, no support is strictly guaranteed for previous releases within the last major series of releases (e. g. 2.0.0 may not be compatible with releases 1.9.0 or 1.0.0).
+  - These releases introduce changes which require an upgrade for Ruby applications and Gems which depend upon this Gem. As such, no support is strictly guaranteed for previous releases within the last major series of releases (e. g. 2.0.0 may not be compatible with releases 1.9.0 or 1.0.0).
 
 ## Releasing a New Version (Patch, Minor, or Major)
 
@@ -82,10 +83,12 @@ Once this release is published, please ensure that this is **not** marked as a `
 
 Once the previously mentioned tasks have been successfully completed, the final task is to inform the Samvera Community of the new Gem version release. This is achieved by submitting an e-mail message to the [samvera-tech Google Group](https://groups.google.com/g/samvera-tech). These is currenty no standardized format for these messages, however, one proposed format is the following:
 
-*For the message subject:*
+_For the message subject:_
+
 > Announcing the Release of `$COMPONENT` 3.4.1
 
-*For the message body:*
+_For the message body:_
+
 > Greetings Members of Samvera,
 >
 > The 3.4.1 release for `$COMPONENT` is now published and available for community adoption:
