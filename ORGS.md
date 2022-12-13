@@ -1,4 +1,5 @@
 # Samvera GitHub Organizations
+
 Samvera Community projects are currently organized between the following three GitHub Organizations:
 
 - https://github.com/samvera
@@ -9,10 +10,10 @@ Samvera Community projects are currently organized between the following three G
 
 Currently, projects under active maintenance (including the Core Components) are managed within this Organization. Aside from the Core Components, this consists of the following:
 
-| Project | Description |
-|-----|-----|
-| [Hyku](https://github.com/samvera/hyku) | About Hyku: A multi-tenant Hyrax application built on the latest and greatest Samvera community components. Brought to you by the Hydra-in-a-Box project partners and IMLS; maintained by the Hyku Interest Group. |
-| [Hyrax](https://github.com/samvera/hyrax) | Hyrax is a Ruby on Rails Engine built by the Samvera community. Hyrax provides a foundation for creating many different digital repository applications. |
+| Project                                   | Description                                                                                                                                                                                                        |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Hyku](https://github.com/samvera/hyku)   | About Hyku: A multi-tenant Hyrax application built on the latest and greatest Samvera community components. Brought to you by the Hydra-in-a-Box project partners and IMLS; maintained by the Hyku Interest Group. |
+| [Hyrax](https://github.com/samvera/hyrax) | Hyrax is a Ruby on Rails Engine built by the Samvera community. Hyrax provides a foundation for creating many different digital repository applications.                                                           |
 
 ## Samvera Labs
 

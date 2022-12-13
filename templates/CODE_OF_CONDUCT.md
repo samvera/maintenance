@@ -10,13 +10,13 @@ Community members communicate primarily in English, though for many of
 them this is not their native language. We therefore strive to express
 ourselves simply and clearly remembering that unnecessary use of
 jargon and slang will be a barrier to understanding for many of our
-colleagues.  We are sensitive to the fact that the international
+colleagues. We are sensitive to the fact that the international
 nature of the community means that we span many different social norms
 around language and behaviour and we strive to conduct ourselves,
 online and in person, in ways that are unlikely to cause offence.
 
 Samvera conversations are often information-rich and intended to
-generate discussion and debate.  We discuss ideas from a standpoint of
+generate discussion and debate. We discuss ideas from a standpoint of
 mutual respect and reasoned argument.
 
 Community members work together to promote a respectful and safe
