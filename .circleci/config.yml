@@ -3,21 +3,25 @@ version: 2.1
 orbs:
   samvera: samvera/circleci-orb@1.0
 jobs:
-  bundle_and_test:
+  lint:
     parameters:
       ruby_version:
         type: string
       bundler_version:
         type: string
         default: 2.3.11
+
     executor:
       name: "samvera/ruby"
       ruby_version: << parameters.ruby_version >>
+
     environment:
       WAIT_FOR_JEKYLL: 10
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+
     steps:
       - samvera/cached_checkout
+
       - run:
           name: Check for a branch named 'master'
           command: |
@@ -27,27 +31,103 @@ jobs:
               echo "$(git branch --all --list master */master)"
             fi
             [[ -z "$(git branch --all --list master */master)" ]]
+
       - run:
           name: Install the NPM dependencies using Yarn
           command: |
             yarn install -D
+
       - run:
           name: Lint the formatting of source code files using Prettier
           command: |
             yarn run prettier --check .
+
       - persist_to_workspace:
           root: ~/
           paths:
             - project/*
             - project/**/*
 
+  bixby:
+    parameters:
+      ruby_version:
+        type: string
+      bundler_version:
+        type: string
+        default: 2.3.11
+
+    executor:
+      name: "samvera/ruby"
+      ruby_version: << parameters.ruby_version >>
+
+    environment:
+      WAIT_FOR_JEKYLL: 10
+      NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+      BUNDLE_PATH: ./vendor/bixby/bundle
+
+    steps:
+      - restore_cache:
+          name: Restore code from cache
+          keys:
+            - v1-source-bixby-{{ .Branch }}-{{ .Revision }}
+
+      - checkout
+
+      - save_cache:
+          name: Save code cache
+          key: v1-source-bixby-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".git"
+
+      - run:
+          name: Update bundler
+          command: |
+            echo 'export BUNDLER_VERSION=<< parameters.bundler_version >>' >> $BASH_ENV
+            gem install bundler -v << parameters.bundler_version >>
+
+      - run:
+          name: Install dependencies
+          working_directory: ~/project/bixby
+          command: bundle check || bundle install --jobs=4 --retry=3
+
+      - run:
+          name: Call Rubocop in parallel
+          working_directory: ~/project/bixby
+          command: bundle exec rubocop --parallel
+
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project/bixby/*
+            - project/bixby/**/*
+
 workflows:
   version: 2
   ci:
     jobs:
-      - bundle_and_test:
-          name: ruby3-1
-          ruby_version: 3.1.1
+      - lint:
+          name: lint
+          ruby_version: 3.2.0
+      - bixby:
+          name: bixby-ruby3-2
+          ruby_version: 3.2.0
+          requires:
+            - lint
+      - bixby:
+          name: bixby-ruby3-1
+          ruby_version: 3.1.3
+          requires:
+            - lint
+      - bixby:
+          name: bixby-ruby3-0
+          ruby_version: 3.0.5
+          requires:
+            - lint
+      - bixby:
+          name: bixby-ruby2-7
+          ruby_version: 2.7.7
+          requires:
+            - lint
 
   nightly:
     triggers:
@@ -58,6 +138,26 @@ workflows:
               only:
                 - main
     jobs:
-      - bundle_and_test:
-          name: ruby3-1
-          ruby_version: 3.1.1
+      - lint:
+          name: lint
+          ruby_version: 3.2.0
+      - bixby:
+          name: bixby-ruby3-2
+          ruby_version: 3.2.0
+          requires:
+            - lint
+      - bixby:
+          name: bixby-ruby3-1
+          ruby_version: 3.1.3
+          requires:
+            - lint
+      - bixby:
+          name: bixby-ruby3-0
+          ruby_version: 3.0.5
+          requires:
+            - lint
+      - bixby:
+          name: bixby-ruby2-7
+          ruby_version: 2.7.7
+          requires:
+            - lint
