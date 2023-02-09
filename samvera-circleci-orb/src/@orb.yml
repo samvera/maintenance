@@ -1,0 +1,9 @@
+---
+version: 2.1
+
+description: |
+  The Samvera CircleCI Orb is meant to make testing Samvera and Samvera-based projects easier.
+
+display:
+  source_url: https://github.com/samvera/samvera-circleci-orb
+  home_url: https://samvera.org/

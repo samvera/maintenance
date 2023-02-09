@@ -1,0 +1,48 @@
+---
+description: Box running FCRepo, Solr, Ruby, Redis, Postgres.
+parameters:
+  fcrepo_version:
+    type: string
+    default: "4.7.5"
+  postgres_version:
+    type: string
+    default: "9.6"
+  redis_version:
+    type: string
+    default: "6.2"
+  ruby_type:
+    type: string
+    default: "ruby"
+  ruby_version:
+    type: string
+    default: "2.5.5"
+  solr_port:
+    type: string
+    default: "8985"
+  solr_version:
+    type: string
+    default: "slim"
+docker:
+  - image: cimg/<< parameters.ruby_type >>:<< parameters.ruby_version >>-browsers
+  - image: samvera/fcrepo4:<< parameters.fcrepo_version >>
+    environment:
+      CATALINA_OPTS: "-Djava.awt.headless=true -Dfile.encoding=UTF-8 -server -Xms512m -Xmx1024m -XX:NewSize=256m -XX:MaxNewSize=256m -XX:PermSize=256m -XX:MaxPermSize=256m -XX:+DisableExplicitGC"
+  - image: zookeeper:3.4
+  - image: solr:<< parameters.solr_version >>
+    environment:
+      VERBOSE: yes
+      SECURITY_JSON: '{"authentication":{"blockUnknown": false, "class":"solr.BasicAuthPlugin", "credentials":{"solr":"IV0EHq1OnNrj6gvRCwvFwTrZ1+z1oBbnQdiVC3otuq0= Ndd7LKvVBAaZIF0QAVi1ekCfAJXr1GGfLtRUXhgrF8c="}, "realm":"My Solr users", "forwardCredentials": false}, "authorization":{ "class":"solr.RuleBasedAuthorizationPlugin", "permissions":[{"name":"security-edit", "role":"admin"}], "user-role":{"solr":"admin"}}}'
+    command: sh -c "server/scripts/cloud-scripts/zkcli.sh -zkhost localhost:2181 -cmd put /security.json \"${SECURITY_JSON}\" && solr-fg -cloud -noprompt  -p << parameters.solr_port >> -z localhost:2181"
+  - image: redis:<< parameters.redis_version >>
+  - image: cimg/postgres:<< parameters.postgres_version >>
+environment:
+  BUNDLE_PATH: vendor/bundle
+  BUNDLE_JOBS: 4
+  BUNDLE_RETRY: 3
+  RAILS_ENV: test
+  RACK_ENV: test
+  FCREPO_TEST_PORT: 8080
+  SPEC_OPTS: --profile 10 --format RspecJunitFormatter --out /tmp/test-results/rspec.xml --format progress
+  POSTGRES_DB: circle_test
+  POSTGRES_HOST: 127.0.0.1
+  POSTGRES_USER: postgres
