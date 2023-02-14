@@ -1,0 +1,18 @@
+---
+description: Box just Ruby
+parameters:
+  ruby_type:
+    type: string
+    default: "ruby"
+  ruby_version:
+    type: string
+    default: "2.5.5"
+docker:
+  - image: cimg/<< parameters.ruby_type >>:<< parameters.ruby_version >>-browsers
+environment:
+  BUNDLE_PATH: vendor/bundle
+  BUNDLE_JOBS: 4
+  BUNDLE_RETRY: 3
+  RAILS_ENV: test
+  RACK_ENV: test
+  SPEC_OPTS: --profile 10 --format RspecJunitFormatter --out /tmp/test-results/rspec.xml --format progress

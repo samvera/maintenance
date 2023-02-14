@@ -1,0 +1,28 @@
+---
+description: Installs a solr core into a running Solr docker container.
+parameters:
+  core_name:
+    type: string
+    default: "hydra-test"
+  solr_port:
+    type: string
+    default: "8985"
+steps:
+  - run:
+      name: "[DEPRECATED] samvera/install_solr_active_fedora_core"
+      command: echo "This command is deprecated and will be removed in 1.0.  Use samvera/install_solr_core instead."
+  - run:
+      name: Wait for Solr
+      command: dockerize -wait tcp://localhost:<< parameters.solr_port >> -timeout 1m
+  - run:
+      name: Load the default Solr config from the active-fedora Gem
+      command: |
+        if [ -d "$(bundle show active-fedora)/lib/generators/active_fedora/config/solr/templates/solr/conf" ]
+        then
+          cd "$(bundle show active-fedora)/lib/generators/active_fedora/config/solr/templates/solr/conf"
+        else
+          cd "$(bundle show active-fedora)/lib/generators/active_fedora/config/solr/templates/solr/config"
+        fi
+        zip -1 -r solr_conf.zip ./*
+        curl -H "Content-type:application/octet-stream" --data-binary @solr_conf.zip "http://localhost:<< parameters.solr_port >>/solr/admin/configs?action=UPLOAD&name=solrconfig"
+        curl -H 'Content-type: application/json' http://localhost:<< parameters.solr_port >>/api/collections/ -d '{create: {name: << parameters.core_name >>, config: solrconfig, numShards: 1}}'

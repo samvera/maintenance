@@ -1,0 +1,14 @@
+---
+description: Run RSpec in Parallel, storing test_results for CircleCI to parse.
+steps:
+  - run:
+      name: Run rspec in parallel
+      command: |
+        mkdir /tmp/test-results
+        bundle exec rspec $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+  # collect reports
+  - store_test_results:
+      path: /tmp/test-results
+  - store_artifacts:
+      path: /tmp/test-results
+      destination: test-results

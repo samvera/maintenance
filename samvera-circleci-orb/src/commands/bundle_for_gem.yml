@@ -1,0 +1,38 @@
+---
+description: Bundles and caches a gem.
+parameters:
+  bundler_version:
+    type: string
+    default: "2.0.1"
+  ruby_version:
+    type: string
+  project:
+    type: string
+  cache_version:
+    type: string
+    default: "1"
+steps:
+  - run:
+      name: "[DEPRECATED] samvera/bundle_for_gem"
+      command: echo "This command is deprecated and will be removed in 1.0.  Use samvera/bundle instead and remove the project parameter."
+
+  - restore_cache:
+      name: Restore bundle from cache
+      keys:
+        - v<< parameters.cache_version >>-bundle-{{ checksum "Gemfile" }}--{{ checksum "<< parameters.project >>.gemspec" }}-<< parameters.ruby_version >>
+
+  - run:
+      name: Update bundler
+      command: |
+        echo 'export BUNDLER_VERSION=<< parameters.bundler_version >>' >> $BASH_ENV
+        gem install bundler -v << parameters.bundler_version >>
+
+  - run:
+      name: Install dependencies
+      command: bundle check || bundle install
+
+  - save_cache:
+      name: Save bundle cache
+      key: v<< parameters.cache_version >>-bundle-{{ checksum "Gemfile" }}--{{ checksum "<< parameters.project >>.gemspec" }}-<< parameters.ruby_version >>
+      paths:
+        - ~/project/vendor/bundle

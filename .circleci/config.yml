@@ -1,23 +1,49 @@
 ---
 version: 2.1
+
 orbs:
+  orb-tools: circleci/orb-tools@11.6
+  # The following error is raised:
+  #
+  # The dev version of samvera/circleci-orb@dev:alpha has expired. Dev versions of orbs are only valid for 90 days after publishing.
+  # samvera: samvera/circleci-orb@dev:alpha
   samvera: samvera/circleci-orb@1.0
+
+orb_promotion_filters: &orb_promotion_filters
+  branches:
+    ignore: /.*/
+  tags:
+    only: /^(major|minor|patch)-release-v\d+\.\d+\.\d+$/
+
+parameters:
+  run-integration-tests:
+    type: boolean
+    default: false
+  dev-orb-version:
+    type: string
+    # default: 'dev:alpha'
+    default: "1.0"
+
 jobs:
-  bundle_and_test:
+  lint:
     parameters:
       ruby_version:
         type: string
       bundler_version:
         type: string
         default: 2.3.11
+
     executor:
       name: "samvera/ruby"
       ruby_version: << parameters.ruby_version >>
+
     environment:
       WAIT_FOR_JEKYLL: 10
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+
     steps:
       - samvera/cached_checkout
+
       - run:
           name: Check for a branch named 'master'
           command: |
@@ -27,14 +53,17 @@ jobs:
               echo "$(git branch --all --list master */master)"
             fi
             [[ -z "$(git branch --all --list master */master)" ]]
+
       - run:
           name: Install the NPM dependencies using Yarn
           command: |
             yarn install -D
+
       - run:
           name: Lint the formatting of source code files using Prettier
           command: |
             yarn run prettier --check .
+
       - persist_to_workspace:
           root: ~/
           paths:
@@ -45,9 +74,19 @@ workflows:
   version: 2
   ci:
     jobs:
-      - bundle_and_test:
-          name: ruby3-1
-          ruby_version: 3.1.1
+      - lint:
+          name: lint
+          ruby_version: 3.2.0
+      - orb-tools/lint:
+          source-dir: samvera-circleci-orb/src
+      - orb-tools/pack:
+          source-dir: samvera-circleci-orb/src
+      - orb-tools/publish:
+          vcs-type: github
+          orb-name: samvera/circleci-orb
+          requires:
+            - orb-tools/lint
+            - orb-tools/pack
 
   nightly:
     triggers:
@@ -58,6 +97,16 @@ workflows:
               only:
                 - main
     jobs:
-      - bundle_and_test:
-          name: ruby3-1
-          ruby_version: 3.1.1
+      - lint:
+          name: lint
+          ruby_version: 3.2.0
+      - orb-tools/lint:
+          source-dir: samvera-circleci-orb/src
+      - orb-tools/pack:
+          source-dir: samvera-circleci-orb/src
+      - orb-tools/publish:
+          vcs-type: github
+          orb-name: samvera/circleci-orb
+          requires:
+            - orb-tools/lint
+            - orb-tools/pack

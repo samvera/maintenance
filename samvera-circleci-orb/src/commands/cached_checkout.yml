@@ -1,0 +1,13 @@
+---
+description: Perform a cache-enabled git checkout.
+steps:
+  - restore_cache:
+      name: Restore code from cache
+      keys:
+        - v1-source-{{ .Branch }}-{{ .Revision }}
+  - checkout
+  - save_cache:
+      name: Save code cache
+      key: v1-source-{{ .Branch }}-{{ .Revision }}
+      paths:
+        - ".git"
