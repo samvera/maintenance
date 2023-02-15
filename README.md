@@ -2,6 +2,10 @@
 
 This repository holds templates and guidelines to support the maintenance of projects in the [Samvera](https://github.com/samvera) Github organization.
 
+## GitHub Project
+
+Tasks for the ongoing maintenance efforts currently being undertaken by members of the Samvera Community are tracked and regularly updated using the [Samvera Component Maintenance Project](https://github.com/orgs/samvera/projects/28/views/3).
+
 ## Samvera Core Components
 
 Samvera Core Components are defined as the following:
