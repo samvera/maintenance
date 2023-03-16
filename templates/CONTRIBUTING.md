@@ -1,48 +1,26 @@
 # How to Contribute
 
-We want your help to make the Samvera community great. There are a few guidelines
-that we need contributors to follow so that we can have a chance of
-keeping on top of things.
+We want your help to make the Samvera community great. There are a few guidelines that we need contributors to follow so that we can have a chance of keeping on top of things.
 
 ## Code of Conduct
 
-The Samvera Community is dedicated to providing a welcoming and positive
-experience for all its members, whether they are at a formal gathering, in
-a social setting, or taking part in activities online. Please see our
-[Code of Conduct](CODE_OF_CONDUCT.md) for more information.
+The Samvera Community is dedicated to providing a welcoming and positive experience for all its members, whether they are at a formal gathering, in a social setting, or taking part in activities online. Please see our [Code of Conduct](./CODE_OF_CONDUCT.md) for more information.
 
 ## Samvera Community Intellectual Property Licensing and Ownership
 
-All code contributors must have an Individual Contributor License Agreement
-(iCLA) on file with the Samvera Steering Group. If the contributor works for
-an institution, the institution must have a Corporate Contributor License
-Agreement (cCLA) on file.
-
-https://wiki.duraspace.org/display/samvera/Samvera+Community+Intellectual+Property+Licensing+and+Ownership
+While there are some [select exceptions](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405211658/Licensed+software+acceptance+procedure), nearly all source code bases produced and maintained by Samvera Community members are published under the [Apache 2.0 License restrictions](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405211660/Code+Copyright+Statement). As such, we please insist that, when creating a new GitHub repository within [https://github.com/samvera-labs](samvera-labs), one please include a copy of the [Apache 2.0 license](./LICENSE) within the repository.
 
 You should also add yourself to the `CONTRIBUTORS.md` file in the root of the project.
 
 ## Language
 
-The language we use matters. Today, tomorrow, and for years to come
-people will read the code we write. They will judge us for our
-design, logic, and the words we use to describe the system.
+The language we use matters.  Today, tomorrow, and for years to come people will read the code we write.  They will judge us for our design, logic, and the words we use to describe the system.
 
-Our words should be accessible. Favor descriptive words that give
-meaning while avoiding reinforcing systemic inequities. For example,
-in the Samvera community, we should favor using allowed_list instead
-of whitelist, denied_list instead of blacklist, or source/copy
-instead of master/slave.
+Our words should be accessible.  Favor descriptive words that give meaning while avoiding reinforcing systemic inequities.  For example, in the Samvera community, we should favor using allowed\_list instead of whitelist, denied\_list instead of blacklist, or source/copy instead of master/slave.
 
-We're going to get it wrong, but this is a call to keep working to
-make it right. View our code and the words we choose as a chance to
-have a conversation. A chance to grow an understanding of the systems
-we develop as well as the systems in which we live.
+We're going to get it wrong, but this is a call to keep working to make it right.  View our code and the words we choose as a chance to have a conversation. A chance to grow an understanding of the systems we develop as well as the systems in which we live.
 
-See [“Blacklists” and “whitelists”: a salutary warning concerning the
-prevalence of racist language in discussions of predatory
-publishing](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6148600/) for
-further details.
+See [“Blacklists” and “whitelists”: a salutary warning concerning the prevalence of racist language in discussions of predatory publishing](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6148600/) for further details.
 
 ## Contribution Tasks
 
@@ -65,20 +43,20 @@ further details.
 
 ### Making Changes
 
-- Fork the repository on GitHub
-- Create a topic branch from where you want to base your work.
-  - This is usually the `main` branch.
-  - To quickly create a topic branch based on `main`; `git branch fix/main/my_contribution main`
-  - Then checkout the new branch with `git checkout fix/main/my_contribution`.
-  - Please avoid working directly on the `main` branch.
-  - Please do not create a branch called `master`. (See note below.)
-  - You may find the [hub suite of commands](https://github.com/defunkt/hub) helpful
-- Make sure you have added sufficient tests and documentation for your changes.
-  - Test functionality with RSpec; Test features / UI with Capybara.
-- Run _all_ the tests to assure nothing else was accidentally broken.
+* Fork the repository on GitHub
+* Create a topic branch from where you want to base your work.
+  * This is usually the `main` branch.
+  * To quickly create a topic branch based on `main`; `git branch fix/main/my_contribution main`
+  * Then checkout the new branch with `git checkout fix/main/my_contribution`.
+  * Please avoid working directly on the `main` branch.
+  * Please do not create a branch called `master`. (See note below.)
+  * You may find the [hub suite of commands](https://github.com/defunkt/hub) helpful
+* Make sure you have added sufficient tests and documentation for your changes.
+  * Test functionality with RSpec; Test features / UI with Capybara.
+* Run _all_ the tests to assure nothing else was accidentally broken.
 
-NOTE: This repository follows the [Samvera Community Code of Conduct](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405212316/Code+of+Conduct)
-and [language recommendations](#language).  
+NOTE: This repository follows the [Samvera Community Code of Conduct](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405212316/Samvera+Code+of+Conduct+and+Anti-Harassment+Policy) and [language recommendations](#language).
+
 Please **_do not_** create a branch called `master` for this repository or as part of
 your pull request; the branch will either need to be removed or renamed before it can
 be considered for inclusion in the code base and history of this repository.
