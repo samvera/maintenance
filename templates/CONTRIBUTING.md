@@ -14,11 +14,11 @@ You should also add yourself to the `CONTRIBUTORS.md` file in the root of the pr
 
 ## Language
 
-The language we use matters.  Today, tomorrow, and for years to come people will read the code we write.  They will judge us for our design, logic, and the words we use to describe the system.
+The language we use matters. Today, tomorrow, and for years to come people will read the code we write. They will judge us for our design, logic, and the words we use to describe the system.
 
-Our words should be accessible.  Favor descriptive words that give meaning while avoiding reinforcing systemic inequities.  For example, in the Samvera community, we should favor using allowed\_list instead of whitelist, denied\_list instead of blacklist, or source/copy instead of master/slave.
+Our words should be accessible. Favor descriptive words that give meaning while avoiding reinforcing systemic inequities. For example, in the Samvera community, we should favor using allowed_list instead of whitelist, denied_list instead of blacklist, or source/copy instead of master/slave.
 
-We're going to get it wrong, but this is a call to keep working to make it right.  View our code and the words we choose as a chance to have a conversation. A chance to grow an understanding of the systems we develop as well as the systems in which we live.
+We're going to get it wrong, but this is a call to keep working to make it right. View our code and the words we choose as a chance to have a conversation. A chance to grow an understanding of the systems we develop as well as the systems in which we live.
 
 See [“Blacklists” and “whitelists”: a salutary warning concerning the prevalence of racist language in discussions of predatory publishing](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6148600/) for further details.
 
@@ -43,17 +43,17 @@ See [“Blacklists” and “whitelists”: a salutary warning concerning the pr
 
 ### Making Changes
 
-* Fork the repository on GitHub
-* Create a topic branch from where you want to base your work.
-  * This is usually the `main` branch.
-  * To quickly create a topic branch based on `main`; `git branch fix/main/my_contribution main`
-  * Then checkout the new branch with `git checkout fix/main/my_contribution`.
-  * Please avoid working directly on the `main` branch.
-  * Please do not create a branch called `master`. (See note below.)
-  * You may find the [hub suite of commands](https://github.com/defunkt/hub) helpful
-* Make sure you have added sufficient tests and documentation for your changes.
-  * Test functionality with RSpec; Test features / UI with Capybara.
-* Run _all_ the tests to assure nothing else was accidentally broken.
+- Fork the repository on GitHub
+- Create a topic branch from where you want to base your work.
+  - This is usually the `main` branch.
+  - To quickly create a topic branch based on `main`; `git branch fix/main/my_contribution main`
+  - Then checkout the new branch with `git checkout fix/main/my_contribution`.
+  - Please avoid working directly on the `main` branch.
+  - Please do not create a branch called `master`. (See note below.)
+  - You may find the [hub suite of commands](https://github.com/defunkt/hub) helpful
+- Make sure you have added sufficient tests and documentation for your changes.
+  - Test functionality with RSpec; Test features / UI with Capybara.
+- Run _all_ the tests to assure nothing else was accidentally broken.
 
 NOTE: This repository follows the [Samvera Community Code of Conduct](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405212316/Samvera+Code+of+Conduct+and+Anti-Harassment+Policy) and [language recommendations](#language).
 
