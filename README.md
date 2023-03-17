@@ -71,6 +71,19 @@ _The following Gems are being merged into other GitHub repositories, but shall r
 |[noid-rails](https://github.com/samvera/noid-rails)|[![Build Status](https://circleci.com/gh/samvera/noid-rails.svg?style=svg)](https://circleci.com/gh/samvera/noid-rails)|✅|✅|✅|✅|✅|✅|✅|✅|
 |[samvera.github.io](https://github.com/samvera/samvera.github.io)|[![Build Status](https://circleci.com/gh/samvera/samvera.github.io.svg?style=svg)](https://circleci.com/gh/samvera/samvera.github.io)|❌|✅|✅|✅|||||
 
+#### Awaiting Promotion
+![awaiting promotion](https://img.shields.io/badge/awaiting-promotion-blue)
+
+_The following Gems must be promoted from the [Samvera Labs](https://github.com/samvera-labs) in order to support the ongoing maintenance of [Samvera](https://github.com/samvera) Gems._
+
+|Gem |CircleCI Status|Ruby 3.2 Support|Ruby 3.1 Support|Ruby 3.0 Support|Ruby 2.7 Support|Rails 7.0 Support|Rails 6.1 Support|Rails 6.0 Support|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|[ActiveTriples](https://github.com/samvera-labs/ActiveTriples)|[![Build Status](https://circleci.com/gh/samvera-labs/ActiveTriples.svg?style=svg)](https://circleci.com/gh/samvera-labs/ActiveTriples)|❌|❌|❌|❌|||||
+|[engine_cart](https://github.com/cbeer/engine_cart)|[![Build Status](https://github.com/cbeer/engine_cart/workflows/CI/badge.svg)](https://github.com/cbeer/engine_cart/actions)|✅|✅|✅|✅|✅|✅|✅|✅|
+|[huborg](https://github.com/samvera-labs/huborg)||||||||||
+|[ldpath](https://github.com/samvera-labs/ldpath)|[![Build Status](https://circleci.com/gh/samvera-labs/ldpath.svg?style=svg)](https://circleci.com/gh/samvera-labs/ldpath)|❌|✅|✅|✅|||||
+|[samvera-labs.github.io](https://github.com/samvera-labs/samvera-labs.github.io)||||||||||
+
 #### Prepared for Deprecation
 ![prepared for deprecation](https://img.shields.io/badge/deprecated-red)
 
@@ -96,7 +109,6 @@ _The following Gems are no longer actively maintained, and awaiting deprecation 
 |[samvera-circleci-orb](https://github.com/samvera/samvera-circleci-orb)|[![Build Status](https://circleci.com/gh/samvera/samvera-circleci-orb.svg?style=svg)](https://circleci.com/gh/samvera/samvera-circleci-orb)|
 
 #### Node.js
-
 |Application|CircleCI Status|Node.js 20 Support|Node.js 19 Support|Node.js 18 Support|Node.js 16 Support| 
 | --- | --- | --- | --- | --- | --- | 
 |[serverless-iiif](https://github.com/samvera/serverless-iiif)|[![Build Status](https://circleci.com/gh/samvera/serverless-iiif.svg?style=svg)](https://circleci.com/gh/samvera/serverless-iiif)| | | | |
