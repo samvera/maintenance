@@ -44,6 +44,13 @@ Samvera Core Components are defined as the following:
 
 _Please reference [A Guide for the Samvera Community](https://samvera.github.io/core_components.html) for further information._
 
+### Hyrax Ecosystem
+| Project | CircleCI Status |
+| --- | --- |
+|[hyrax](https://github.com/samvera/hyrax)|[![Build Status](https://circleci.com/gh/samvera/hyrax.svg?style=svg)](https://circleci.com/gh/samvera/hyrax)|
+|[hyku](https://github.com/samvera/hyku)|[![Build Status](https://circleci.com/gh/samvera/hyku.svg?style=svg)](https://circleci.com/gh/samvera/hyku)|
+|[nurax](https://github.com/samvera/nurax)|[![Build Status](https://circleci.com/gh/samvera/nurax.svg?style=svg)](https://circleci.com/gh/samvera/nurax)|
+
 ### Samvera Ruby Gems
 
 | Gem | CircleCI Status | Ruby 3.2 Support | Ruby 3.1 Support | Ruby 3.0 Support | Ruby 2.7 Support | Rails 7.0 Support | Rails 6.1 Support | Rails 6.0 Support |
@@ -111,7 +118,13 @@ _The following Gems are no longer actively maintained, and awaiting deprecation 
 #### Node.js
 |Application|CircleCI Status|Node.js 20 Support|Node.js 19 Support|Node.js 18 Support|Node.js 16 Support| 
 | --- | --- | --- | --- | --- | --- | 
+|[samvera.org](https://github.com/samvera/samvera.org)|[![Build Status](https://github.com/samvera/samvera.org/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)](https://github.com/samvera/samvera.org/actions)|
 |[serverless-iiif](https://github.com/samvera/serverless-iiif)|[![Build Status](https://circleci.com/gh/samvera/serverless-iiif.svg?style=svg)](https://circleci.com/gh/samvera/serverless-iiif)| | | | |
+
+### Samvera Administration
+| Project | CircleCI Status |
+| --- | --- |
+|[maintenance](https://github.com/samvera/maintenance)|[![Build Status](https://circleci.com/gh/samvera/serverless-iiif.svg?style=svg)](https://circleci.com/gh/samvera/serverless-iiif)|
 
 ## Maintenance Documentation
 
