@@ -111,6 +111,7 @@ _The following Gems are no longer actively maintained, and awaiting deprecation 
 | --- | --- | --- | --- | --- | --- | 
 |[node-iiif](https://github.com/samvera/node-iiif)|[![Build Status](https://circleci.com/gh/samvera/node-iiif.svg?style=svg)](https://circleci.com/gh/samvera/node-iiif)| | | | |
 |[serverless-iiif](https://github.com/samvera/serverless-iiif)|[![Build Status](https://circleci.com/gh/samvera/serverless-iiif.svg?style=svg)](https://circleci.com/gh/samvera/serverless-iiif)| | | | |
+|[samvera.org](https://github.com/samvera/samvera.org)|[![Build Status](https://circleci.com/gh/samvera/samvera.org.svg?style=svg)](https://circleci.com/gh/samvera/samvera.org)| | | | |
 |[hyku-next](https://github.com/samvera/hyku-next)|[![Build Status](https://circleci.com/gh/samvera/hyku-next.svg?style=svg)](https://circleci.com/gh/samvera/hyku-next)| | | | |
 |[avalon-next](https://github.com/samvera/avalon-next)|[![Build Status](https://circleci.com/gh/samvera/avalon-next.svg?style=svg)](https://circleci.com/gh/samvera/avalon-next)|  |  |  |  |
 
