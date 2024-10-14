@@ -6,9 +6,9 @@ This repository holds templates and guidelines to support the maintenance of pro
 
 The Samvera GitHub Organization (https://github.com/samvera/) contains `git` repositories for multiple projects developed and actively maintained by the Samvera Community. The projects themselves may be divided into four distinct groups:
 
-- Hyrax
+- Hyrax (and the Hyrax Ecosystem)
 - Samvera Ruby Gems
-- Samvera JavaScript Packages
+- Samvera JavaScript Projects
 - Samvera Infrastructure
 - Samvera Administration
 
@@ -26,7 +26,7 @@ _(formerly labeled as "Core Components")_
 
 Samvera Ruby Gems are published as small, modular software libraries which were designed to be adopted by [Ruby on Rails](https://rubyonrails.org/) application developers who seek to implement digital object repositories. Core Components permit developers to benefit from, and contribute to Samvera for cases in which Hyrax might be impractical or unsatisfactory for their organizational requirements.
 
-### Samvera JavaScript Packages
+### Samvera JavaScript Projects
 
 While Hyrax and Samvera Ruby Gems provide a suite of solutions for web application developers seeking to implement digital object repositories, there exist a small, but growing number of projects which exclusively provide user interface features and functionality. These are expected to provide published JavaScript packages using the [npm](https://npmjs.com), and, being under the open source Apache 2.0 license, are most welcome for contributors.
 
@@ -36,7 +36,7 @@ There also exist those Samvera Community projects which provide some hosted serv
 
 ### Samvera Administration
 
-Projects categorized for Samvera Administration typically provide some function related to community management (such as [this repository](https://github.com/samvera/maintenance)), [static websites](https://github.com/samvera/samvera.github.io), or other forms of documentation.
+Projects categorized for Samvera Administration typically provide some function related to community management (such as [this repository](https://github.com/samvera/maintenance)).
 
 ## Maintenance Requirements
 
@@ -53,7 +53,6 @@ _Please reference [A Guide for the Samvera Community](https://samvera.github.io/
 | --- | --- |
 |[hyrax](https://github.com/samvera/hyrax)|[![Build Status](https://circleci.com/gh/samvera/hyrax.svg?style=svg)](https://circleci.com/gh/samvera/hyrax)|
 |[hyku](https://github.com/samvera/hyku)|[![Build Status](https://circleci.com/gh/samvera/hyku.svg?style=svg)](https://circleci.com/gh/samvera/hyku)|
-|[nurax](https://github.com/samvera/nurax)|[![Build Status](https://circleci.com/gh/samvera/nurax.svg?style=svg)](https://circleci.com/gh/samvera/nurax)|
 
 ### Samvera Ruby Gems
 
@@ -63,6 +62,7 @@ _Please reference [A Guide for the Samvera Community](https://samvera.github.io/
 |[iiif_manifest](https://github.com/samvera/iiif_manifest)|[![Build Status](https://circleci.com/gh/samvera/iiif_manifest.svg?style=svg)](https://circleci.com/gh/samvera/iiif_manifest)|✅|✅|✅|✅|||||
 |[ldp](https://github.com/samvera/ldp)|[![Build Status](https://circleci.com/gh/samvera/ldp.svg?style=svg)](https://circleci.com/gh/samvera/ldp)|✅|✅|✅|✅|✅|✅|✅|✅|
 |[valkyrie](https://github.com/samvera/valkyrie)|[![Build Status](https://circleci.com/gh/samvera/valkyrie.svg?style=svg)](https://circleci.com/gh/samvera/valkyrie)|✅|✅|✅|✅|✅|✅|✅|✅|
+|[bulkrax](https://github.com/samvera/bulkrax)|[![Build Status](https://circleci.com/gh/samvera/bulkrax.svg?style=svg)](https://circleci.com/gh/samvera/bulkrax)|✅|✅|✅|✅|✅|✅|✅|✅|
 
 #### Under Reorganization
 ![under reorganization](https://img.shields.io/badge/under-reorg-yellow)
@@ -80,7 +80,6 @@ _The following Gems are being merged into other GitHub repositories, but shall r
 |[hydra-role-management](https://github.com/samvera/hydra-role-management)|[![Build Status](https://circleci.com/gh/samvera/hydra-role-management.svg?style=svg)](https://circleci.com/gh/samvera/hydra-role-management)|✅|✅|✅|✅|✅|✅|✅|✅|
 |[hydra-works](https://github.com/samvera/hydra-works)|[![Build Status](https://circleci.com/gh/samvera/hydra-works.svg?style=svg)](https://circleci.com/gh/samvera/hydra-works)|✅|✅|✅|✅|✅|✅|✅|✅|
 |[noid-rails](https://github.com/samvera/noid-rails)|[![Build Status](https://circleci.com/gh/samvera/noid-rails.svg?style=svg)](https://circleci.com/gh/samvera/noid-rails)|✅|✅|✅|✅|✅|✅|✅|✅|
-|[samvera.github.io](https://github.com/samvera/samvera.github.io)|[![Build Status](https://circleci.com/gh/samvera/samvera.github.io.svg?style=svg)](https://circleci.com/gh/samvera/samvera.github.io)|❌|✅|✅|✅|||||
 
 #### Awaiting Promotion
 ![awaiting promotion](https://img.shields.io/badge/awaiting-promotion-blue)
@@ -106,11 +105,14 @@ _The following Gems are no longer actively maintained, and awaiting deprecation 
 |[questioning_authority](https://github.com/samvera/questioning_authority)|[![Build Status](https://circleci.com/gh/samvera/questioning_authority.svg?style=svg)](https://circleci.com/gh/samvera/questioning_authority)
 |[rubydora](https://github.com/samvera/rubydora)|[![Build Status](https://circleci.com/gh/samvera/rubydora.svg?style=svg)](https://circleci.com/gh/samvera/rubydora)|
 
-### Samvera JavaScript Packages
+### Samvera JavaScript Projects
 
 |Package|CircleCI Status|Node.js 20 Support|Node.js 19 Support|Node.js 18 Support|Node.js 16 Support| 
 | --- | --- | --- | --- | --- | --- | 
 |[node-iiif](https://github.com/samvera/node-iiif)|[![Build Status](https://circleci.com/gh/samvera/node-iiif.svg?style=svg)](https://circleci.com/gh/samvera/node-iiif)| | | | |
+|[serverless-iiif](https://github.com/samvera/serverless-iiif)|[![Build Status](https://circleci.com/gh/samvera/serverless-iiif.svg?style=svg)](https://circleci.com/gh/samvera/serverless-iiif)| | | | |
+|[hyku-next](https://github.com/samvera/hyku-next)|[![Build Status](https://circleci.com/gh/samvera/hyku-next.svg?style=svg)](https://circleci.com/gh/samvera/hyku-next)| | | | |
+|[avalon-next](https://github.com/samvera/avalon-next)|[![Build Status](https://circleci.com/gh/samvera/avalon-next.svg?style=svg)](https://circleci.com/gh/samvera/avalon-next)|  |  |  |  |
 
 ### Samvera Infrastructure Projects
 
@@ -118,12 +120,6 @@ _The following Gems are no longer actively maintained, and awaiting deprecation 
 |Application|CircleCI Status| 
 | --- | --- |
 |[samvera-circleci-orb](https://github.com/samvera/samvera-circleci-orb)|[![Build Status](https://circleci.com/gh/samvera/samvera-circleci-orb.svg?style=svg)](https://circleci.com/gh/samvera/samvera-circleci-orb)|
-
-#### Node.js
-|Application|CircleCI Status|Node.js 20 Support|Node.js 19 Support|Node.js 18 Support|Node.js 16 Support| 
-| --- | --- | --- | --- | --- | --- | 
-|[samvera.org](https://github.com/samvera/samvera.org)|[![Build Status](https://github.com/samvera/samvera.org/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)](https://github.com/samvera/samvera.org/actions)|
-|[serverless-iiif](https://github.com/samvera/serverless-iiif)|[![Build Status](https://circleci.com/gh/samvera/serverless-iiif.svg?style=svg)](https://circleci.com/gh/samvera/serverless-iiif)| | | | |
 
 ### Samvera Administration
 | Project | CircleCI Status |
