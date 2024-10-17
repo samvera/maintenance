@@ -10,6 +10,7 @@ class Samvera < Thor
   option :updated, type: :string, default: "2021-01-01"
   option :created, type: :string, default: "2021-01-01"
   option :label, type: :string, default: "stale"
+  option :project_id, type: :numeric, default: 28
   def audit_issues
 
     repo = options[:repo]
@@ -61,6 +62,10 @@ class Samvera < Thor
           else
             say("No milestone to remove from Issue ##{issue.number}", :yellow)
           end
+
+          project_url = "https://github.com/orgs/samvera/projects/#{project_id}"
+          project_card = client.create_project_card(project_url, content_id: issue.id, content_type: 'Issue')
+          say("Added Issue ##{issue.number} to Project '#{project_name}'", :green)
         rescue Octokit::Error => e
           say("Failed to audit Issue ##{issue.number}: #{e.message}", :red)
         end
@@ -68,6 +73,60 @@ class Samvera < Thor
         say("Issue ##{issue.number} already has the ``#{label}\" label", :yellow)
       end
       say("-" * 40, :green)
+    end
+  end
+
+  desc "add_team_member", "Adds a GitHub user to a Samvera Organization Team"
+  option :user, required: true, type: :string
+  option :team, type: :string, default: "maintenance"
+  option :org, type: :string, default: "samvera"
+  def add_team_member
+
+    team_slug = options[:team]
+    user_login = options[:user]
+    org = options[:org]
+
+    client = Octokit::Client.new(access_token: ENV['GH_TOKEN'])
+
+    begin
+      team = client.team_by_name(org, team_slug)
+      team_id = team[:id]
+      client.add_team_membership(team_id, user_login)
+
+      say("#{user_login} has been successfully added to the team #{team_slug} in the organization #{org}.", :green)
+    rescue Octokit::NotFound => not_found_error
+      say("The team or organization was not found, or the user does not exist: #{not_found_error}", :red)
+    rescue Octokit::Unauthorized
+      say("Authentication failed. Please check your personal access token.", :red)
+    rescue Octokit::UnprocessableEntity
+      say("The user is already a member of the team.", :yellow)
+    end
+  end
+
+  desc "remove_team_member", "Remove a GitHub user from a Samvera Organization Team"
+  option :user, required: true, type: :string
+  option :team, required: true, type: :string
+  option :org, type: :string, default: "samvera"
+  def remove_team_member
+
+    team_slug = options[:team]
+    user_login = options[:user]
+    org = options[:org]
+
+    client = Octokit::Client.new(access_token: ENV['GH_TOKEN'])
+
+    begin
+      team = client.team_by_name(org, team_slug)
+      team_id = team[:id]
+      client.remove_team_membership(team_id, user_login)
+
+      say("#{user_login} has been successfully removed from the team #{team_slug} in the organization #{org}.", :green)
+    rescue Octokit::NotFound
+      say("The team or organization was not found, or the user does not exist.", :red)
+    rescue Octokit::Unauthorized
+      say("Authentication failed. Please check your personal access token.", :red)
+    rescue Octokit::UnprocessableEntity
+      say("The user is not a member of the team.", :yellow)
     end
   end
 end
