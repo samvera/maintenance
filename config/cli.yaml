@@ -1,0 +1,11 @@
+---
+samvera_orb_release: "samvera/circleci-orb@1.0"
+supported_ruby_versions:
+  - "3.1.6"
+  - "3.2.5"
+  - "3.3.5"
+supported_rails_versions:
+  - "7.0.8.5"
+  - "7.1.4.1"
+  - "7.2.1.1"
+
