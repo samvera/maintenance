@@ -3,6 +3,8 @@
 require 'octokit'
 require 'thor'
 require 'yaml'
+require 'faraday'
+require 'json'
 
 class Samvera < Thor
 
@@ -295,6 +297,100 @@ class Samvera < Thor
     else
       validation_error = "File does not exist: #{file_path}"
       handle_error(validation_error: validation_error)
+    end
+  end
+
+  class Gems < Thor
+
+    attr_reader :gem, :owner
+
+    desc "list_owners", "List owners for a given gem"
+    option :gem, required: true, type: :string
+    def list_owners
+      @gem = options[:gem]
+
+      response = request_owners
+
+      if response.success?
+        payload = JSON.parse(response.body)
+
+        owners = payload
+        owners.each do |owner|
+
+          if owner.key?("handle")
+            handle = owner["handle"]
+            say("#{handle}", :green)
+          end
+        end
+      else
+        say("Failed to request the Gem information for #{gem}: #{response.body}", :red)
+      end
+    end
+
+    desc "add_owner", "Add an owner for a given gem"
+    option :gem, required: true, type: :string
+    option :owner, required: true, type: :string
+    def add_owner
+      @gem = options[:gem]
+      @owner = options[:owner]
+
+      response = request_add_owner
+
+      if response.success?
+        say("Successfully added the new owner #{owner}", :green)
+      else
+        say("Failed to add the new owner #{owner}: #{response.body}", :red)
+      end
+    end
+
+    desc "remove_owner", "Remove an owner for a given gem"
+    option :gem, required: true, type: :string
+    option :owner, required: true, type: :string
+    def remove_owner
+      @gem = options[:gem]
+      @owner = options[:owner]
+
+      response = request_remove_owner
+
+      if response.success?
+        say("Successfully removed the owner #{owner}", :green)
+      else
+        say("Failed to remove the owner #{owner}: #{response.body}", :red)
+      end
+    end
+
+    private
+
+    def request_owners
+      Faraday.get("https://rubygems.org/api/v1/gems/#{gem}/owners.json")
+    end
+
+    def api_key
+      ENV["RUBYGEMS_API_KEY"]
+    end
+
+    def request_add_owner
+      params = {
+        email: owner
+      }
+      encoded = JSON.generate(params)
+      headers = {
+        Authorization: api_key,
+        "Content-Type": "application/json"
+      }
+      Faraday.post("https://rubygems.org/api/v1/gems/#{gem}/owners.json", encoded, headers)
+    end
+
+    def request_remove_owner
+      params = {
+        email: owner
+      }
+      encoded = JSON.generate(params)
+      headers = {
+        Authorization: api_key,
+        "Content-Type": "application/json"
+      }
+      Faraday.delete("https://rubygems.org/api/v1/gems/#{gem}/owners.json", params, headers)
     end
   end
 
