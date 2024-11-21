@@ -52,6 +52,22 @@ Currently, there are twenty Samvera Core Components maintained by the community:
 - [TEAMS](./TEAMS.md) - Reference guide for the structure of GitHub Teams within the `samvera`, `samvera-labs`, and `samvera-deprecated` Organizations
 - [RELEASES](./ruby/RELEASES.md) - Reference guide for the releasing Ruby Gem components maintained by the Samvera Community
 
+## Samvera Component Repository Labels
+
+The following common set of standard GitHub issue labels are available for each repository, and their usage is encouraged please:
+
+| Label | Description |
+| ----- | ----------- |
+| a11y | Compliance with accessibility (a11y) standards |
+| bug | Unexpected feature behavior or software error  |
+| ci | Continuous integration |
+| code-coverage | Coverage of the code base using unit, integration, or automated acceptance test suites |
+| documentation | Documentation in the form of GitHub Markdown, GitHub Wiki, or code comments (e. g. rdoc or Yard) |
+| enhancement | Feature improvement or a new feature |
+| maintenance | A task or action delegated to the Component Interest Group |
+| question | A discussion regarding any aspect of the code base (including documentation or continuous integration) |
+| security | An update addressing a known vulnerability in the code base (or in a dependency) |
+
 ## Samvera Component Templates
 
 [README.md](./templates/README.md) - The elements in this template should be in
