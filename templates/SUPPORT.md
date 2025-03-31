@@ -2,4 +2,4 @@ If you would like to report an issue, first search [the list of issues](https://
 
 If you have questions or need help, please email [the Samvera community tech list](https://groups.google.com/forum/#!forum/samvera-tech) or stop by the #dev channel in [the Samvera community Slack team](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405211682/Getting+Started+in+the+Samvera+Community#Join-the-Samvera-Slack-workspace).
 
-You can learn more about the various Samvera communication channels on the [Getting Started in the Samvera Community](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405211682/Getting+Started+in+the+Samvera+Community) wiki page.
+You can learn more about the various Samvera communication channels on the [Getting Started in the Samvera Community](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405211682/Getting+Started+in+the+Samvera+Community#Join-the-Samvera-Slack-workspace) wiki page.
