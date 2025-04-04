@@ -52,33 +52,71 @@ Currently, there are twenty Samvera Core Components maintained by the community:
 - [TEAMS](./TEAMS.md) - Reference guide for the structure of GitHub Teams within the `samvera`, `samvera-labs`, and `samvera-deprecated` Organizations
 - [RELEASES](./ruby/RELEASES.md) - Reference guide for the releasing Ruby Gem components maintained by the Samvera Community
 
-## Samvera Component Templates
+## Promoting Samvera Projects to Core Components
 
-[README.md](./templates/README.md) - The elements in this template should be in
-every repository. Additional elements may be added.
+In order for Samvera GitHub repositories to become components, a process of promotion is in place. Prior to being considered for promotion, the repository must first be migrated to [Samvera Labs](https://github.com/samvera-labs). Alternatively, one may also create an entirely new project within Samvera Labs (there are no restrictions for creating GitHub repositories within this organization).
 
-[SUPPORT.md](./templates/SUPPORT.md) - Copy this and replace `{{library}}` with
-the repository name. This is linked from the README and has information on how
-to create an issue, email the list, and connect to Slack.
+The established requirements for promoting a project to a core component are the following:
 
-[CONTRIBUTING.md](./templates/CONTRIBUTING.md) - Contribution guidelines for
-Samvera projects. Should be included. Minimal customization should be necessary.
+### Code Quality Requirements
+    1. Software unit and integration test suites using a framework such as [RSpec](https://rspec.info/) or [Jest for JavaScript](https://jestjs.io/). While there is no minimum threshold for test coverage, usage of tools such as [SimpleCov for Ruby](https://github.com/simplecov-ruby/simplecov) or [Jest test coverage analysis features](https://jestjs.io/docs/configuration#collectcoverage-boolean) are encouraged (but not required)
 
-[CODE_OF_CONDUCT.md](./templates/CODE_OF_CONDUCT.md) - Should be included
-verbatim in every Samvera repository. If this is updated, it needs to be
-distributed to all Samvera organization repositories.
+    1. Employs a source code linting tool such as [Bixby](https://github.com/samvera/bixby) or [Prettier](https://github.com/prettier/prettier) in order to enforce style guidelines within the source code base
 
-[LICENSE](./templates/LICENSE) - Should be included in every Samvera
-repository. The copyright statements may change as appropriate. This template
-was taken from guidelines found on the
-[wiki](https://wiki.duraspace.org/display/samvera/Code+Copyright+Statement).
+    1. Show compatibility with current Ruby and Rails versions and other dependencies, when was it last tested. Note compatibility with prior versions when available. Compatibility can be specified in the gemspec(s) or verified within the CI configuration
 
-[MAILMAP](./templates/MAILMAP) - A master template for [git mailmap](https://www.git-scm.com/docs/git-check-mailmap).
-This template is something to push to all samvera repositories. The goal in
-applying a common mailmap is to help understand contributions as people move
-and change roles/functions/laptops.
+    1. Uses continuous integration to automate the execution of test suites (preferably CircleCI, unless there is a compelling reason to do something else). For CircleCI, also strongly encouraged would be the usage of [Samvera CircleCI Orb](https://github.com/samvera/samvera-circleci-orb)
 
-## Ruby Scripts
+    1. Code must feature releases using [RubyGems](https://rubygems.org/) or the [NPM](https://www.npmjs.com/), and offer a release version >= 1.0.0
+
+    1. Code releases must follow the [Semantic Versioning specification](https://semver.org/) standards
+
+### Documentation Requirements
+Currently, the documentation files for each core component are derived from templates tracked within this repository:
+
+    1. [`README.md`](https://github.com/samvera/maintenance/blob/main/templates/README.md)
+
+    1. [`LICENSE`](https://github.com/samvera/maintenance/blob/main/templates/LICENSE)
+
+    1. [`CODE_OF_CONDUCT.md`](https://github.com/samvera/maintenance/blob/main/templates/CODE_OF_CONDUCT.md)
+
+    1. [`SUPPORT.md`](https://github.com/samvera/maintenance/blob/main/templates/SUPPORT.md)
+
+    1. [`CONTRIBUTING.md`](https://github.com/samvera/maintenance/blob/main/templates/CONTRIBUTING.md)
+
+    1. Known issues documented in GitHub Issues
+
+    1. Resolve any `TODO` comments within the code base (or, remove the comments and please create these as GitHub Issues)
+
+### Community Use Requirements
+
+    1. Community use by three or more organizations
+
+    1. In active use for six months
+
+    1. Has an ongoing maintenance plan
+
+### Proposing a Project to the Community for Promotion
+
+As needed or requested, code repositories are reviewed for promotion and deprecation. To start this process, email the [Samvera Tech Google Group](https://groups.google.com/g/samvera-tech) with a request. Provide documentation that all of the above requirements have been met. Then propose an agenda item on the next [Samvera Tech Call](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405211059/Notes+from+Tech+Meetings+and+Calls) to discuss the issue. Once the promotion has been decided, another email should go out to the group with an announcement.
+
+## Samvera Component Repository Labels
+
+The following common set of standard GitHub issue labels are available for each repository, and their usage is encouraged please:
+
+| Label | Description |
+| ----- | ----------- |
+| a11y | Compliance with accessibility (a11y) standards |
+| bug | Unexpected feature behavior or software error  |
+| ci | Continuous integration |
+| code-coverage | Coverage of the code base using unit, integration, or automated acceptance test suites |
+| documentation | Documentation in the form of GitHub Markdown, GitHub Wiki, or code comments (e. g. rdoc or Yard) |
+| enhancement | Feature improvement or a new feature |
+| maintenance | A task or action delegated to the Component Interest Group |
+| question | A discussion regarding any aspect of the code base (including documentation or continuous integration) |
+| security | An update addressing a known vulnerability in the code base (or in a dependency) |
+
+## Core Component Utilities in Ruby
 
 There exist Ruby scripts in this repository that can be used to propagate some of these templates. These are located within `ruby/scripts/`:
 
