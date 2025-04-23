@@ -119,6 +119,14 @@ One may also explicitly request that all existing ownership permissions be revok
 $ WITH_REVOKE=true bundle exec ruby ./ruby/script/grant_revoke_gem_authority.rb
 ```
 
+### Auditing GitHub Repositories for stale issues
+
+One may search for all issues last updated before a given date, apply the label `stale` and appending a comment calling attention to the issue creator with the following:
+
+```bash
+$ export GH_TOKEN="secret" bundle exec thor samvera:audit_issues --repo="samvera/active_fedora" --updated="2021-01-01"
+```
+
 ## Contributing
 
 If you're working on PR for this project, create a feature branch off of `main`.
